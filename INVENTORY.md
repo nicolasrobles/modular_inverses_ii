@@ -208,6 +208,8 @@ Identifiers beginning `step:`, `geom:` or `support:` are repository identifiers.
 
 ## Literature inputs
 
+Cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application.
+
 The entries below are inputs to the written proofs. Locators follow the citations in v17. Different uses of the same work remain separate nodes so the graph identifies the particular result being used.
 
 | Input | Reference and locator | Used in |

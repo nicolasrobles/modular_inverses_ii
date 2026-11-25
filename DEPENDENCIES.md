@@ -7,7 +7,7 @@ This guide explains the dependency maps for **v17 of _Height averages of Klooste
 | View | Scope | Files |
 | --- | --- | --- |
 | Overview | 11 groups showing the main proof branches | [PDF](docs/dependency_overview.pdf) · [SVG](docs/dependency_overview.svg) · [PNG](docs/dependency_overview.png) · [DOT](docs/dependency_overview.dot) |
-| Numbered statements | All 31 numbered results and both numbered remarks | [PDF](docs/dependency_graph.pdf) · [SVG](docs/dependency_graph.svg) · [PNG](docs/dependency_graph.png) · [DOT](docs/dependency_graph.dot) |
+| Numbered statements | All 31 numbered results, both numbered remarks, and seven groups of trusted reference inputs | [PDF](docs/dependency_graph.pdf) · [SVG](docs/dependency_graph.svg) · [PNG](docs/dependency_graph.png) · [DOT](docs/dependency_graph.dot) |
 | Complete documented dependencies | 92 nodes: 33 numbered entries, 46 supporting steps, and 13 literature inputs; 112 edges | [PDF](docs/dependency_complete.pdf) · [SVG](docs/dependency_complete.svg) · [DOT](docs/dependency_complete.dot) |
 
 [![Overview of the proof dependencies](docs/dependency_overview.png)](docs/dependency_overview.pdf)
@@ -21,19 +21,22 @@ An arrow points **from a prerequisite to a statement or calculation that uses it
 | Appearance | Meaning |
 | --- | --- |
 | Solid grey arrow | A mathematical input: an identity, estimate, statement, or supporting calculation |
-| Solid orange arrow | A cited literature input at the locator recorded in the inventory |
+| Dashed orange arrow | A trusted literature input at the locator recorded in the inventory |
 | Dashed purple arrow | Reuse of a proof method, rather than use of that result's numerical conclusion |
 | Blue or cyan box | A theorem, corollary, or proposition; the label specifies the kind |
 | White box | A lemma |
 | Dashed grey box | A numbered remark |
 | Pale ellipse | A supporting calculation or elementary fact in the manuscript |
 | Orange hexagon | A literature input |
+| Orange box in the reference row | A group of trusted literature inputs from one reference work |
 
 Colours do not indicate verification or formalization status. None of the entries is a Lean declaration.
 
+**Literature convention:** cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application. The reference row makes this scope explicit, as in the model repository.
+
 ### How the smaller views are obtained
 
-The **numbered-statement graph** suppresses supporting nodes while retaining the paths they connect between numbered statements. It omits external literature nodes and transitively reduces the solid arrows: if one numbered result reaches another through an intermediate numbered result, the additional direct arrow is removed from this view. The complete graph retains the actual recorded proof uses.
+The **numbered-statement graph** suppresses supporting nodes while retaining the paths they connect between numbered statements. It transitively reduces the solid arrows: if one numbered result reaches another through an intermediate numbered result, the additional direct arrow is removed from this view. A separate row groups the 13 literature inputs by their seven reference works. Its 14 source arrows stop at the first numbered result using each input, possibly through supporting calculations. The complete graph retains the individual literature locators and the actual recorded proof uses.
 
 For example, the complete graph records the use of both the Kuznetsov formula in Lemma 2.1 and the window estimate in Lemma 2.2 in proving Lemma 3.1. Since Lemma 2.1 also feeds Lemma 2.2, the numbered graph keeps the path through Lemma 2.2 and suppresses the additional direct arrow. Its absence there does not mean the formula is unused.
 

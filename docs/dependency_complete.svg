@@ -907,7 +907,7 @@
 <g id="edge100" class="edge">
 <title>external:brs&#45;spectral&#45;&gt;lem:kuznetsov</title>
 <g id="a_edge100"><a xlink:title="BRS, Lemma 4.3: Kuznetsov formula and local spectral large sieve.">
-<path fill="none" stroke="#c2410c" d="M416.93,-1660.78C416.93,-1649.22 416.93,-1633.61 416.93,-1619.93"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M416.93,-1660.78C416.93,-1649.22 416.93,-1633.61 416.93,-1619.93"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="419.2,-1619.9 416.93,-1613.4 414.65,-1619.9 419.2,-1619.9"/>
 </a>
 </g>
@@ -916,7 +916,7 @@
 <g id="edge101" class="edge">
 <title>external:brs&#45;transforms&#45;&gt;lem:transforms</title>
 <g id="a_edge101"><a xlink:title="BRS, Lemma 4.2: Twisted Bessel transform estimates.">
-<path fill="none" stroke="#c2410c" d="M628.93,-1570.31C628.93,-1557.08 628.93,-1538.39 628.93,-1522.59"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M628.93,-1570.31C628.93,-1557.08 628.93,-1538.39 628.93,-1522.59"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="631.2,-1522.51 628.93,-1516.01 626.65,-1522.51 631.2,-1522.51"/>
 </a>
 </g>
@@ -925,7 +925,7 @@
 <g id="edge102" class="edge">
 <title>external:brs&#45;discrepancy&#45;&gt;step:ks&#45;repetition&#45;and&#45;arcs</title>
 <g id="a_edge102"><a xlink:title="BRS, Lemma 2.1: Koksma&#45;Szusz base inequality.">
-<path fill="none" stroke="#c2410c" d="M1309.93,-812.59C1309.93,-796.41 1309.93,-772.15 1309.93,-754.14"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M1309.93,-812.59C1309.93,-796.41 1309.93,-772.15 1309.93,-754.14"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="1312.2,-753.82 1309.93,-747.32 1307.65,-753.82 1312.2,-753.82"/>
 </a>
 </g>
@@ -934,7 +934,7 @@
 <g id="edge103" class="edge">
 <title>external:dlmf&#45;&gt;step:low&#45;kernel&#45;integrals</title>
 <g id="a_edge103"><a xlink:title="DLMF, Equations (10.9.6) and (10.32.9): Integral representations of J and K Bessel functions.">
-<path fill="none" stroke="#c2410c" d="M795.93,-1660.78C795.93,-1649.49 795.93,-1634.35 795.93,-1620.92"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M795.93,-1660.78C795.93,-1649.49 795.93,-1634.35 795.93,-1620.92"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="798.2,-1620.58 795.93,-1614.08 793.65,-1620.58 798.2,-1620.58"/>
 </a>
 </g>
@@ -943,7 +943,7 @@
 <g id="edge104" class="edge">
 <title>external:weil&#45;&gt;lem:weil</title>
 <g id="a_edge104"><a xlink:title="IK, Corollary 11.12: Weil bound.">
-<path fill="none" stroke="#c2410c" d="M323.93,-1360C323.93,-1347.14 323.93,-1332.11 323.93,-1319.76"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M323.93,-1360C323.93,-1347.14 323.93,-1332.11 323.93,-1319.76"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="326.2,-1319.7 323.93,-1313.2 321.65,-1319.7 326.2,-1319.7"/>
 </a>
 </g>
@@ -952,7 +952,7 @@
 <g id="edge105" class="edge">
 <title>external:divisor&#45;&gt;step:divisor&#45;small&#45;power</title>
 <g id="a_edge105"><a xlink:title="IK, Equation (1.81): Divisor small&#45;power bound.">
-<path fill="none" stroke="#c2410c" d="M110.66,-1371.4C111.29,-1356.65 112.21,-1335.23 112.91,-1318.84"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M110.66,-1371.4C111.29,-1356.65 112.21,-1335.23 112.91,-1318.84"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="115.19,-1318.75 113.2,-1312.16 110.65,-1318.55 115.19,-1318.75"/>
 </a>
 </g>
@@ -961,7 +961,7 @@
 <g id="edge106" class="edge">
 <title>external:selberg&#45;&gt;lem:selberg</title>
 <g id="a_edge106"><a xlink:title="Xi, Equation (1.1): Selberg identity for integer arguments.">
-<path fill="none" stroke="#c2410c" d="M848.93,-999.7C848.93,-985.32 848.93,-964.59 848.93,-948.38"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M848.93,-999.7C848.93,-985.32 848.93,-964.59 848.93,-948.38"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="851.2,-948.23 848.93,-941.73 846.65,-948.23 851.2,-948.23"/>
 </a>
 </g>
@@ -970,7 +970,7 @@
 <g id="edge107" class="edge">
 <title>external:farey&#45;&gt;lem:farey</title>
 <g id="a_edge107"><a xlink:title="HW, Theorems 28 and 30: Adjacent Farey fractions.">
-<path fill="none" stroke="#c2410c" d="M3855.93,-988.3C3855.93,-975.45 3855.93,-960.42 3855.93,-948.06"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M3855.93,-988.3C3855.93,-975.45 3855.93,-960.42 3855.93,-948.06"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="3858.2,-948 3855.93,-941.5 3853.65,-948 3858.2,-948"/>
 </a>
 </g>
@@ -979,7 +979,7 @@
 <g id="edge108" class="edge">
 <title>external:ramanujan&#45;&gt;eq:axes</title>
 <g id="a_edge108"><a xlink:title="HW, Theorem 271: Ramanujan&#45;sum identity.">
-<path fill="none" stroke="#c2410c" d="M262.97,-999.7C276.37,-984.43 296.08,-961.99 310.64,-945.4"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M262.97,-999.7C276.37,-984.43 296.08,-961.99 310.64,-945.4"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="312.4,-946.84 314.98,-940.46 308.98,-943.84 312.4,-946.84"/>
 </a>
 </g>
@@ -988,7 +988,7 @@
 <g id="edge109" class="edge">
 <title>external:totient&#45;&gt;support:cardinality&#45;comparison</title>
 <g id="a_edge109"><a xlink:title="HW, Theorem 330: Summatory totient asymptotic.">
-<path fill="none" stroke="#c2410c" d="M1082.93,-710.74C1082.93,-694.56 1082.93,-670.3 1082.93,-652.29"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M1082.93,-710.74C1082.93,-694.56 1082.93,-670.3 1082.93,-652.29"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="1085.2,-651.97 1082.93,-645.47 1080.65,-651.97 1085.2,-651.97"/>
 </a>
 </g>
@@ -997,7 +997,7 @@
 <g id="edge110" class="edge">
 <title>external:large&#45;sieve&#45;&gt;step:large&#45;sieve&#45;endpoint&#45;sums</title>
 <g id="a_edge110"><a xlink:title="MV, Lemma 2, equation (2.1); proof of Theorem 1: Cosecant bilinear inequality and endpoint argument.">
-<path fill="none" stroke="#c2410c" d="M2018.93,-699.78C2018.93,-684.72 2018.93,-666.41 2018.93,-652.09"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M2018.93,-699.78C2018.93,-684.72 2018.93,-666.41 2018.93,-652.09"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="2021.2,-651.92 2018.93,-645.42 2016.65,-651.92 2021.2,-651.92"/>
 </a>
 </g>
@@ -1006,7 +1006,7 @@
 <g id="edge111" class="edge">
 <title>external:plancherel&#45;&gt;eq:plancherel</title>
 <g id="a_edge111"><a xlink:title="Grafakos, Theorem 2.2.14 (4): Plancherel theorem.">
-<path fill="none" stroke="#c2410c" d="M920.93,-1371.4C920.93,-1356.65 920.93,-1335.23 920.93,-1318.84"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M920.93,-1371.4C920.93,-1356.65 920.93,-1335.23 920.93,-1318.84"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="923.2,-1318.66 920.93,-1312.16 918.65,-1318.66 923.2,-1318.66"/>
 </a>
 </g>
@@ -1015,7 +1015,7 @@
 <g id="edge112" class="edge">
 <title>external:poisson&#45;&gt;lem:poisson</title>
 <g id="a_edge112"><a xlink:title="Grafakos, Theorem 3.2.8: Poisson summation.">
-<path fill="none" stroke="#c2410c" d="M2559.93,-812.59C2559.93,-796.7 2559.93,-773.04 2559.93,-755.13"/>
+<path fill="none" stroke="#c2410c" stroke-dasharray="5,2" d="M2559.93,-812.59C2559.93,-796.7 2559.93,-773.04 2559.93,-755.13"/>
 <polygon fill="#c2410c" stroke="#c2410c" points="2562.2,-754.83 2559.93,-748.33 2557.65,-754.83 2562.2,-754.83"/>
 </a>
 </g>

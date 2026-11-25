@@ -201,6 +201,7 @@ def write_inventory(data: dict) -> None:
             lines.append(f"| {first} | {cell(n['summary'])} | {inputs(data,n['id'])} |")
         lines.append("")
     lines += ["## Literature inputs", "",
+              data["conventions"]["literature_policy"], "",
               "The entries below are inputs to the written proofs. Locators follow the citations in v17. "
               "Different uses of the same work remain separate nodes so the graph identifies the particular result being used.", "",
               "| Input | Reference and locator | Used in |", "| --- | --- | --- |"]
@@ -246,8 +247,8 @@ def write_inventory(data: dict) -> None:
 def project_numbered(data: dict) -> tuple[list[dict], list[dict]]:
     """Suppress auxiliary steps, retain paths, then reduce solid proof edges.
 
-    External sources are omitted from this view. A dashed method-reuse edge
-    remains distinct from an edge which uses a proved numerical assertion.
+    External sources are added separately as grouped trusted inputs. A dashed
+    method-reuse edge remains distinct from a numerical proof dependency.
     """
     by_id = {n["id"]: n for n in data["nodes"]}
     numbered = {n["id"] for n in data["nodes"] if n["kind"] in RESULT_KINDS}
@@ -295,6 +296,54 @@ def project_numbered(data: dict) -> tuple[list[dict], list[dict]]:
     return [n for n in data["nodes"] if n["id"] in numbered], edges
 
 
+def project_trusted_sources(data: dict) -> tuple[list[dict], list[dict]]:
+    """Group literature by bibliography key and find its first numbered users.
+
+    Paths may pass through supporting steps, but stop at the first numbered
+    statement. Distinct inputs from the same work remain separately documented
+    in the complete inventory.
+    """
+    by_id = {n["id"]: n for n in data["nodes"]}
+    adjacency = {key: set() for key in by_id}
+    for edge in data["edges"]:
+        if edge.get("relation") != "method":
+            adjacency[edge["from"]].add(edge["to"])
+    groups = {}
+    for node in data["nodes"]:
+        if node["kind"] != "external":
+            continue
+        key = node["references"][0]["bibkey"]
+        group = groups.setdefault(key, {"members": [], "consumers": {}})
+        group["members"].append(node["id"])
+        stack = list(adjacency[node["id"]])
+        seen = set()
+        while stack:
+            v = stack.pop()
+            if v in seen:
+                continue
+            seen.add(v)
+            if by_id[v]["kind"] in RESULT_KINDS:
+                group["consumers"].setdefault(v, []).append(node["id"])
+            else:
+                stack.extend(adjacency[v])
+    nodes, edges = [], []
+    for definition in data["numbered_view"]["trusted_source_groups"]:
+        key = definition["bibkey"]
+        group = groups[key]
+        node = dict(definition)
+        node.update(id="source:" + key, kind="trusted_group", members=group["members"],
+                    summary="Trusted literature input; " + definition["title"])
+        nodes.append(node)
+        for consumer, members in sorted(group["consumers"].items()):
+            locators = [by_id[k]["references"][0]["locator"] for k in members]
+            edges.append({"from": node["id"], "to": consumer, "relation": "literature",
+                          "reason": "Trusted input: " + key + ", " + "; ".join(locators) +
+                          ". Supporting calculations are suppressed in this view."})
+    if {n["bibkey"] for n in nodes} != set(groups):
+        raise ValueError("Trusted source groups do not cover the literature inputs")
+    return nodes, edges
+
+
 def node_attributes(node: dict, overview: bool = False) -> dict:
     kind = node["kind"]
     if overview:
@@ -328,14 +377,18 @@ def node_attributes(node: dict, overview: bool = False) -> dict:
         attrs.update(shape="ellipse", fillcolor="#F8FAFC", color="#94A3B8", fontsize="10")
     elif kind == "external":
         attrs.update(shape="hexagon", fillcolor="#FFF7ED", color="#C2410C", fontsize="10")
+    elif kind == "trusted_group":
+        attrs.update(fillcolor="#FFF7ED", color="#C2410C", fontsize="10")
     if not overview:
-        attrs["URL"] = f"{REPO_URL}/blob/main/INVENTORY.md#{anchor(node['id'])}"
+        fragment = ("ref-" + node["bibkey"].lower()) if kind == "trusted_group" else anchor(node["id"])
+        attrs["URL"] = f"{REPO_URL}/blob/main/INVENTORY.md#{fragment}"
         attrs["target"] = "_top"
     return attrs
 
 
 def write_dot(path: Path, nodes: list[dict], edges: list[dict], title: str,
-              overview: bool = False, ranks: list[dict] | None = None) -> None:
+              overview: bool = False, ranks: list[dict] | None = None,
+              trusted_sources: bool = False) -> None:
     lines = ["digraph dependencies {", "  graph ["]
     options = {
         "rankdir": "TB", "bgcolor": "white", "pad": "0.3",
@@ -343,15 +396,28 @@ def write_dot(path: Path, nodes: list[dict], edges: list[dict], title: str,
         "splines": "spline", "outputorder": "edgesfirst", "fontname": "DejaVu Sans",
         "fontsize": "17", "fontcolor": "#0F172A", "labelloc": "t", "label": title,
     }
+    if trusted_sources:
+        options.update(newrank="true", compound="true")
     lines.extend(f"    {k}={quote(v)}," for k, v in options.items())
     lines.extend([
         "  ];",
         '  edge [color="#64748B", arrowsize="0.65", penwidth="1.0", fontname="DejaVu Sans", fontsize="9"];',
     ])
-    for node in nodes:
+    def render_node(node):
         attrs = node_attributes(node, overview)
         rendered = ", ".join(f"{k}={quote(v)}" for k, v in attrs.items())
-        lines.append(f"  {quote(node['id'])} [{rendered}];")
+        return f"  {quote(node['id'])} [{rendered}];"
+    if trusted_sources:
+        lines += [
+            "  subgraph cluster_trusted_sources {",
+            '    label="Trusted reference inputs (assumed, not reproved)";',
+            '    fontsize="13"; fontcolor="#9A3412"; color="#FDBA74";',
+            '    style="rounded"; rank="source";',
+        ]
+        lines.extend(render_node(n) for n in nodes if n["kind"] == "trusted_group")
+        lines.append("  }")
+    lines.extend(render_node(n) for n in nodes
+                 if not trusted_sources or n["kind"] != "trusted_group")
     for group in ranks or []:
         members = "; ".join(quote(x) for x in group["nodes"])
         lines.append(f"  {{ rank={quote(group['rank'])}; {members}; }}")
@@ -362,10 +428,22 @@ def write_dot(path: Path, nodes: list[dict], edges: list[dict], title: str,
         if edge.get("relation") == "method":
             attrs.update(style="dashed", color="#7C3AED", label="proof method")
         elif edge.get("relation") == "literature":
-            attrs.update(color="#C2410C")
+            attrs.update(style="dashed", color="#C2410C")
         rendered = ", ".join(f"{k}={quote(v)}" for k, v in attrs.items())
         suffix = f" [{rendered}]" if attrs else ""
         lines.append(f"  {quote(edge['from'])} -> {quote(edge['to'])}{suffix};")
+    if trusted_sources:
+        legend = ("Solid grey: numbered prerequisite; transitively redundant edges are omitted.\n"
+                  "Dashed orange: trusted literature input. Dashed purple: reuse of a proof method.\n"
+                  "Reference proofs are accepted; each application must match the cited result.\n"
+                  "Click a result or reference for its inventory entry.")
+        lines.append('  graph_legend [shape="plain", fontname="DejaVu Sans", fontsize="10", '
+                     'fontcolor="#475569", label=' + quote(legend) + '];')
+        lines.append('  { rank="sink"; graph_legend; }')
+        predecessors = {e["from"] for e in edges}
+        for node in nodes:
+            if node["id"] not in predecessors:
+                lines.append(f'  {quote(node["id"])} -> graph_legend [style="invis"];')
     lines.append("}")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -386,8 +464,10 @@ def main() -> None:
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     validate(data)
     numbered, projected = project_numbered(data)
+    sources, source_edges = project_trusted_sources(data)
     print(f"Validated {len(numbered)} numbered entries, {len(data['nodes'])} total nodes, "
           f"and {len(data['edges'])} recorded edges; no directed cycle.")
+    print(f"Numbered graph: {len(sources)} trusted reference groups and {len(source_edges)} source arrows.")
     if args.check:
         return
     write_inventory(data)
@@ -399,9 +479,9 @@ def main() -> None:
     write_dot(docs / "dependency_overview.dot", overview["nodes"], overview["edges"],
               data["metadata"]["title"] + "\n" + f"Main proof branches · {version}",
               overview=True, ranks=overview.get("rank_groups"))
-    write_dot(docs / "dependency_graph.dot", numbered, projected,
+    write_dot(docs / "dependency_graph.dot", sources + numbered, projected + source_edges,
               f"Numbered statements · {version}\n{result_count} results and {remark_count} remarks; "
-              "arrows point from prerequisites to consequences")
+              "literature inputs trusted", trusted_sources=True)
     write_dot(docs / "dependency_complete.dot", data["nodes"], data["edges"],
               f"Complete documented dependencies · {version}\nNumbered statements, supporting steps, and literature inputs")
     for name in ["dependency_overview", "dependency_graph"]:

@@ -13,7 +13,7 @@ This repository documents the statements and proof dependencies of **v17** of th
 | [Statement inventory](INVENTORY.md) | Every numbered theorem, corollary, proposition, lemma, and remark, with its TeX label, summary, source location, and proof inputs |
 | [Dependency guide](DEPENDENCIES.md) | How to read the graphs, the main proof branches, and the distinction between mathematical inputs, proof-method reuse, and contextual references |
 | [Overview graph](docs/dependency_overview.pdf) | The main branches on one page |
-| [Numbered-statement graph](docs/dependency_graph.pdf) | All 33 numbered entries, with supporting calculations suppressed |
+| [Numbered-statement graph](docs/dependency_graph.png) | All 33 numbered entries and seven groups of trusted reference inputs, with supporting calculations suppressed |
 | [Complete documented graph](docs/dependency_complete.pdf) | Numbered statements, 46 supporting steps, and 13 precise literature inputs |
 | [Machine-readable inventory](docs/dependency_inventory.json) | Stable identifiers, source locators, and an explanation for each recorded dependency |
 
@@ -74,6 +74,8 @@ Here $du$ is normalized area measure. The distance proof is independent of the s
 The numbered inventory contains **5 theorems, 4 corollaries, 20 lemmas, 2 propositions, and 2 remarks**. Introductory statements are counted once, rather than again at the location of their proofs. Section 7's discussion and its fixed-second-argument extension are listed separately.
 
 The complete documented graph has **92 nodes and 112 edges**. Its supporting nodes identify calculations already present in v17. The literature nodes identify particular cited results, with locators, rather than treating the bibliography as a list of assumptions. Ordinary arithmetic and analysis are described where used without expanding them into an axiomatic dependency graph.
+
+**Literature convention:** cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application. The [numbered-statement graph](docs/dependency_graph.png) shows these inputs in a separate reference row, following the model repository. [PDF](docs/dependency_graph.pdf) and [SVG](docs/dependency_graph.svg) versions are available for enlargement.
 
 The inventory distinguishes statements proved in the manuscript from cited inputs. These descriptions report the structure of the paper; they are not proof-assistant certification. There are currently no Lean files, theorem exports, or formal build targets.
 

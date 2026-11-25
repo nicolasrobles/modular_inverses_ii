@@ -30,10 +30,11 @@
     "direction": "Prerequisite to consequence.",
     "proof": "A mathematical statement, identity, estimate, or calculation used in the written proof.",
     "method": "Reuse of a proof method, distinct from using the numerical assertion of that result.",
-    "literature": "A cited external input at the precise locator recorded in the inventory.",
+    "literature": "A trusted cited external result at the precise locator recorded in the inventory.",
     "source_locators": "One-based line numbers in the identified v17 source. PDF pages are from its compiled auxiliary file.",
     "synthetic_ids": "The prefixes step:, geom:, support:, external:, and ov: are repository identifiers, not new manuscript labels or theorem numbers.",
-    "scope": "Numbered statements and substantive supporting steps. Routine definitions and ambient arithmetic, calculus, measure theory and finite-sum manipulations are described where used, not represented as a formal axiomatic foundation."
+    "scope": "Numbered statements and substantive supporting steps. Routine definitions and ambient arithmetic, calculus, measure theory and finite-sum manipulations are described where used, not represented as a formal axiomatic foundation.",
+    "literature_policy": "Cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application."
   },
   "nodes": [
     {
@@ -2250,7 +2251,8 @@
           "bibkey": "BRS",
           "locator": "Lemma 4.3"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:brs-transforms",
@@ -2265,7 +2267,8 @@
           "bibkey": "BRS",
           "locator": "Lemma 4.2"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:brs-discrepancy",
@@ -2280,7 +2283,8 @@
           "bibkey": "BRS",
           "locator": "Lemma 2.1"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:dlmf",
@@ -2295,7 +2299,8 @@
           "bibkey": "DLMF",
           "locator": "Equations (10.9.6) and (10.32.9)"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:weil",
@@ -2310,7 +2315,8 @@
           "bibkey": "IK",
           "locator": "Corollary 11.12"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:divisor",
@@ -2325,7 +2331,8 @@
           "bibkey": "IK",
           "locator": "Equation (1.81)"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:selberg",
@@ -2340,7 +2347,8 @@
           "bibkey": "Xi",
           "locator": "Equation (1.1)"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:farey",
@@ -2355,7 +2363,8 @@
           "bibkey": "HW",
           "locator": "Theorems 28 and 30"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:ramanujan",
@@ -2370,7 +2379,8 @@
           "bibkey": "HW",
           "locator": "Theorem 271"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:totient",
@@ -2385,7 +2395,8 @@
           "bibkey": "HW",
           "locator": "Theorem 330"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:large-sieve",
@@ -2400,7 +2411,8 @@
           "bibkey": "MV",
           "locator": "Lemma 2, equation (2.1); proof of Theorem 1"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:plancherel",
@@ -2415,7 +2427,8 @@
           "bibkey": "Grafakos",
           "locator": "Theorem 2.2.14 (4)"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     },
     {
       "id": "external:poisson",
@@ -2430,7 +2443,8 @@
           "bibkey": "Grafakos",
           "locator": "Theorem 3.2.8"
         }
-      ]
+      ],
+      "trust_status": "trusted_literature_input"
     }
   ],
   "edges": [
@@ -3630,6 +3644,45 @@
           "ov:distance",
           "ov:obstruction"
         ]
+      }
+    ]
+  },
+  "numbered_view": {
+    "trusted_source_groups": [
+      {
+        "bibkey": "BRS",
+        "title": "Blomer, Risager and Shparlinski",
+        "short_title": "Blomer-Risager-Shparlinski\nKuznetsov; spectral large sieve\nBessel transforms; Koksma-Szusz"
+      },
+      {
+        "bibkey": "DLMF",
+        "title": "NIST Digital Library of Mathematical Functions",
+        "short_title": "DLMF\nBessel integral representations"
+      },
+      {
+        "bibkey": "IK",
+        "title": "Iwaniec and Kowalski",
+        "short_title": "Iwaniec-Kowalski\nWeil and divisor bounds"
+      },
+      {
+        "bibkey": "Grafakos",
+        "title": "Grafakos",
+        "short_title": "Grafakos\nPlancherel; Poisson summation"
+      },
+      {
+        "bibkey": "HW",
+        "title": "Hardy and Wright",
+        "short_title": "Hardy-Wright\nFarey fractions; Ramanujan sums\nSummatory totient estimate"
+      },
+      {
+        "bibkey": "MV",
+        "title": "Montgomery and Vaughan",
+        "short_title": "Montgomery-Vaughan\nTwo-sided large sieve"
+      },
+      {
+        "bibkey": "Xi",
+        "title": "Xi",
+        "short_title": "Xi\nSelberg identity"
       }
     ]
   }
