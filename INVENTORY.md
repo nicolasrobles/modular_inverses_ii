@@ -16,6 +16,8 @@ The complete map also records **46 supporting steps** and **13 literature inputs
 - The manuscript is not distributed in this repository.
 - Formalization has not started. There are no Lean declarations or kernel-checked results here.
 
+Graph colours follow the model repository: purple for trusted references, green for certified entries, and yellow for pending certification. All internal entries currently have pending certification status; this status is separate from the mathematical audit.
+
 The **basis** column describes how v17 presents the item: a cited input, an in-text proof, or a transfer of an earlier argument. It does not certify the proof. Summaries abbreviate the statements; their full hypotheses remain in the identified manuscript.
 
 | Kind | Count |

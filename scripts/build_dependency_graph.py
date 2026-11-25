@@ -18,6 +18,12 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "docs" / "dependency_inventory.json"
 RESULT_KINDS = {"theorem", "corollary", "lemma", "proposition", "remark"}
 REPO_URL = "https://github.com/nicolasrobles/modular_inverses_ii"
+# Status palette shared with quaternary-quadratic-forms.
+STATUS_COLOURS = {
+    "pending": {"fillcolor": "#fff4dc", "color": "#b88023"},
+    "certified": {"fillcolor": "#e1f5df", "color": "#408342"},
+    "trusted": {"fillcolor": "#eeeafd", "color": "#7762b4"},
+}
 
 
 def quote(text: str) -> str:
@@ -67,6 +73,13 @@ def validate(data: dict) -> None:
     for node in numbered:
         if not node.get("number") or not node.get("source", {}).get("statement_lines"):
             raise ValueError(f"Missing statement locator: {node['id']}")
+    internal = [n for n in nodes if n["kind"] != "external"]
+    for node in internal:
+        if node.get("certification_status") not in {"pending", "certified"}:
+            raise ValueError(f"Missing or unsupported certification status: {node['id']}")
+    if data["metadata"]["formalization_status"] == "not_started":
+        if any(n["certification_status"] == "certified" for n in internal):
+            raise ValueError("A certified entry conflicts with formalization not started")
     overview = data["overview"]
     overview_ids = {n["id"] for n in overview["nodes"]}
     if len(overview_ids) != len(overview["nodes"]):
@@ -142,6 +155,9 @@ def write_inventory(data: dict) -> None:
         "- Locations are one-based lines in that source; statement pages refer to its compiled PDF.",
         "- The manuscript is not distributed in this repository.",
         "- Formalization has not started. There are no Lean declarations or kernel-checked results here.", "",
+        "Graph colours follow the model repository: purple for trusted references, green for certified "
+        "entries, and yellow for pending certification. All internal entries currently have pending "
+        "certification status; this status is separate from the mathematical audit.", "",
         "The **basis** column describes how v17 presents the item: a cited input, an in-text proof, "
         "or a transfer of an earlier argument. It does not certify the proof. "
         "Summaries abbreviate the statements; their full hypotheses remain in the identified manuscript.", "",
@@ -349,7 +365,8 @@ def node_attributes(node: dict, overview: bool = False) -> dict:
     if overview:
         label = node["title"] + "\n" + node["short_title"]
     elif kind in RESULT_KINDS:
-        label = kind.capitalize() + " " + node["number"] + "\n" + node["short_title"]
+        label = (kind.capitalize() + " " + node["number"] + "\n" + node["short_title"] +
+                 "\n[" + node["certification_status"].capitalize() + "]")
     else:
         label = node["short_title"]
     attrs = {
@@ -359,26 +376,22 @@ def node_attributes(node: dict, overview: bool = False) -> dict:
         "style": "rounded,filled",
         "fillcolor": "#FFFFFF",
         "color": "#64748B",
-        "fontcolor": "#172554",
+        "fontcolor": "#1f2937",
         "fontname": "DejaVu Sans",
         "fontsize": "11",
         "margin": "0.14,0.10",
         "penwidth": "1.1",
     }
-    if kind == "theorem" or overview:
-        attrs.update(fillcolor="#DBEAFE", color="#2563EB", penwidth="1.4")
-    elif kind == "corollary":
-        attrs.update(fillcolor="#EFF6FF", color="#3B82F6")
-    elif kind == "proposition":
-        attrs.update(fillcolor="#E0F2FE", color="#0284C7")
-    elif kind == "remark":
-        attrs.update(fillcolor="#F1F5F9", color="#64748B", style="rounded,dashed,filled")
-    elif kind == "auxiliary":
-        attrs.update(shape="ellipse", fillcolor="#F8FAFC", color="#94A3B8", fontsize="10")
-    elif kind == "external":
-        attrs.update(shape="hexagon", fillcolor="#FFF7ED", color="#C2410C", fontsize="10")
-    elif kind == "trusted_group":
-        attrs.update(fillcolor="#FFF7ED", color="#C2410C", fontsize="10")
+    if kind in {"external", "trusted_group"}:
+        attrs.update(STATUS_COLOURS["trusted"], fontsize="10")
+        if kind == "external":
+            attrs["shape"] = "hexagon"
+    else:
+        attrs.update(STATUS_COLOURS[node.get("certification_status", "pending")])
+        if kind == "remark":
+            attrs["style"] = "rounded,dashed,filled"
+        elif kind == "auxiliary":
+            attrs.update(shape="ellipse", fontsize="10")
     if not overview:
         fragment = ("ref-" + node["bibkey"].lower()) if kind == "trusted_group" else anchor(node["id"])
         attrs["URL"] = f"{REPO_URL}/blob/main/INVENTORY.md#{fragment}"
@@ -401,7 +414,7 @@ def write_dot(path: Path, nodes: list[dict], edges: list[dict], title: str,
     lines.extend(f"    {k}={quote(v)}," for k, v in options.items())
     lines.extend([
         "  ];",
-        '  edge [color="#64748B", arrowsize="0.65", penwidth="1.0", fontname="DejaVu Sans", fontsize="9"];',
+        '  edge [color="#4b5563", arrowsize="0.65", penwidth="1.0", fontname="DejaVu Sans", fontsize="9"];',
     ])
     def render_node(node):
         attrs = node_attributes(node, overview)
@@ -411,7 +424,7 @@ def write_dot(path: Path, nodes: list[dict], edges: list[dict], title: str,
         lines += [
             "  subgraph cluster_trusted_sources {",
             '    label="Trusted reference inputs (assumed, not reproved)";',
-            '    fontsize="13"; fontcolor="#9A3412"; color="#FDBA74";',
+            '    fontsize="13"; fontcolor="#7762b4"; color="#a59adc";',
             '    style="rounded"; rank="source";',
         ]
         lines.extend(render_node(n) for n in nodes if n["kind"] == "trusted_group")
@@ -426,15 +439,17 @@ def write_dot(path: Path, nodes: list[dict], edges: list[dict], title: str,
         if edge.get("reason"):
             attrs["tooltip"] = edge["reason"]
         if edge.get("relation") == "method":
-            attrs.update(style="dashed", color="#7C3AED", label="proof method")
+            attrs.update(style="dashed", color="#7a8795", label="method reuse")
         elif edge.get("relation") == "literature":
-            attrs.update(style="dashed", color="#C2410C")
+            attrs.update(style="dashed", color="#8d79bc")
         rendered = ", ".join(f"{k}={quote(v)}" for k, v in attrs.items())
         suffix = f" [{rendered}]" if attrs else ""
         lines.append(f"  {quote(edge['from'])} -> {quote(edge['to'])}{suffix};")
     if trusted_sources:
         legend = ("Solid grey: numbered prerequisite; transitively redundant edges are omitted.\n"
-                  "Dashed orange: trusted literature input. Dashed purple: reuse of a proof method.\n"
+                  "Dashed purple: trusted literature input. Dashed grey labelled 'method reuse': reuse of a proof.\n"
+                  "Purple: trusted references. Green: certified. Yellow: pending certification.\n"
+                  "Certification status is separate from the mathematical audit.\n"
                   "Reference proofs are accepted; each application must match the cited result.\n"
                   "Click a result or reference for its inventory entry.")
         lines.append('  graph_legend [shape="plain", fontname="DejaVu Sans", fontsize="10", '
@@ -476,14 +491,18 @@ def main() -> None:
     version = data["metadata"]["source_version"]
     result_count = sum(n["kind"] != "remark" for n in numbered)
     remark_count = sum(n["kind"] == "remark" for n in numbered)
+    status_counts = Counter(n["certification_status"] for n in numbered)
     write_dot(docs / "dependency_overview.dot", overview["nodes"], overview["edges"],
-              data["metadata"]["title"] + "\n" + f"Main proof branches · {version}",
+              data["metadata"]["title"] + "\n" + f"Main proof branches · {version}\n"
+              "Green: certified; yellow: pending certification",
               overview=True, ranks=overview.get("rank_groups"))
     write_dot(docs / "dependency_graph.dot", sources + numbered, projected + source_edges,
               f"Numbered statements · {version}\n{result_count} results and {remark_count} remarks; "
-              "literature inputs trusted", trusted_sources=True)
+              f"{status_counts['certified']} certified; {status_counts['pending']} pending\n"
+              "Literature inputs trusted", trusted_sources=True)
     write_dot(docs / "dependency_complete.dot", data["nodes"], data["edges"],
-              f"Complete documented dependencies · {version}\nNumbered statements, supporting steps, and literature inputs")
+              f"Complete documented dependencies · {version}\nNumbered statements, supporting steps, and literature inputs\n"
+              "Purple: trusted references; green: certified; yellow: pending certification")
     for name in ["dependency_overview", "dependency_graph"]:
         render(docs / (name + ".dot"), ["svg", "pdf", "png"])
     render(docs / "dependency_complete.dot", ["svg", "pdf"])

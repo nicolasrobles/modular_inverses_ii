@@ -34,7 +34,8 @@
     "source_locators": "One-based line numbers in the identified v17 source. PDF pages are from its compiled auxiliary file.",
     "synthetic_ids": "The prefixes step:, geom:, support:, external:, and ov: are repository identifiers, not new manuscript labels or theorem numbers.",
     "scope": "Numbered statements and substantive supporting steps. Routine definitions and ambient arithmetic, calculus, measure theory and finite-sum manipulations are described where used, not represented as a formal axiomatic foundation.",
-    "literature_policy": "Cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application."
+    "literature_policy": "Cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application.",
+    "status_colours": "Purple denotes trusted literature, green denotes certified entries, and yellow denotes pending certification. Certification status is separate from the mathematical audit. All internal entries are pending while formalization has not started."
   },
   "nodes": [
     {
@@ -62,7 +63,8 @@
       "references": [],
       "notes": [
         "The actual proof invokes Lemma 3.2 directly, not the statement of Theorem 1.2. Theorem 1.2 is an equivalent presentation of the annular bound, but it is not the direct citation in this proof."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "thm:short",
@@ -89,7 +91,8 @@
       "references": [],
       "notes": [
         "Do not create an edge from Theorem 1.2 to Lemma 3.2 merely because the introduction announces the theorem before its proof."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "cor:most",
@@ -114,7 +117,8 @@
         "statement_page": 4
       },
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "thm:pair-height",
@@ -141,7 +145,8 @@
       "references": [],
       "notes": [
         "Only the upper estimate is spectral via Proposition 3.4. The pointwise lower bound is elementary."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "cor:pair-height-most",
@@ -166,7 +171,8 @@
         "statement_page": 4
       },
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "thm:distance",
@@ -205,7 +211,8 @@
         "statement_page": 4
       },
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "thm:correction",
@@ -233,7 +240,8 @@
       "notes": [
         "The uniform Riemann-sum estimate is proved inside this theorem's proof.",
         "Neither Proposition 6.1 nor Lemma 2.8 is an input."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "cor:obstruction",
@@ -261,7 +269,8 @@
       "notes": [
         "This is an absolute-value lower bound for the sharp interval remainder; it does not assert positivity of that sharp remainder.",
         "The sharp cardinality asymptotic N_Q~(3/pi^2)Q^2 is not needed in the proof."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:kuznetsov",
@@ -304,7 +313,8 @@
       ],
       "notes": [
         "Part (i) has the signed spectral measure; part (ii) has the positive spectral measure. These are two parts of one numbered lemma."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:window",
@@ -348,7 +358,8 @@
           ]
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "lem:transforms",
@@ -382,7 +393,8 @@
       ],
       "notes": [
         "This is Lemma 2.3, not the low-spectrum bound. The imaginary-parameter part is only asserted here for |t|>=1."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:low",
@@ -428,7 +440,8 @@
       ],
       "notes": [
         "Independent of the high-spectrum estimate in Lemma 2.3; do not draw a dependency 2.3 -> 2.4."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:weil",
@@ -460,7 +473,8 @@
           ]
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "lem:selberg",
@@ -512,7 +526,8 @@
       ],
       "notes": [
         "The sum over divisors is positive divisors of the gcd. The all-zero frequency is not used in the later two-frequency mean."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:farey",
@@ -546,7 +561,8 @@
       ],
       "notes": [
         "The adjacent-gap bounds are derived from this lemma. Nesting and the circular separation estimate recorded nearby have their own elementary arguments and are not applications of this lemma."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:sieve",
@@ -592,7 +608,8 @@
       ],
       "notes": [
         "No Farey lemma is needed for this abstract inequality. Farey separation is used only when it is applied later to the manuscript's specific frequencies."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:ks",
@@ -627,7 +644,8 @@
           ]
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "lem:twist",
@@ -662,7 +680,8 @@
           ]
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "lem:annulus",
@@ -708,7 +727,8 @@
       ],
       "notes": [
         "The delta C<1 case is elementary. The spectral/smoothing argument is used only for delta C>=1."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "cor:weighted",
@@ -733,7 +753,8 @@
         "statement_page": 17
       },
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "prop:two",
@@ -779,7 +800,8 @@
       ],
       "notes": [
         "In a graph that includes unnumbered facts, use Lemma 2.6 -> equation (2.6) -> Proposition 3.4. In a numbered-statements-only graph the direct collapsed predecessor is Lemma 2.6."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "rem:weighted-two",
@@ -804,7 +826,8 @@
         "statement_page": 18
       },
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "lem:pair-pointwise",
@@ -831,7 +854,8 @@
       "references": [],
       "notes": [
         "The Fourier coefficients of the difference multiset are |a_Y(k)|^2; repetitions and zero differences are retained in the first assertion."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:farey-product",
@@ -858,7 +882,8 @@
       "references": [],
       "notes": [
         "Uses the determinant part of Lemma 2.7, not its denominator-sum part."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:adaptive",
@@ -885,7 +910,8 @@
       "references": [],
       "notes": [
         "R_rho is defined only on irrational coordinates; this suffices for the subsequent Lebesgue-measure arguments."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:product-tail",
@@ -910,7 +936,8 @@
         "statement_page": 21
       },
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "lem:distance-tail",
@@ -935,7 +962,8 @@
         "statement_page": 21
       },
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "lem:empty",
@@ -962,7 +990,8 @@
       "references": [],
       "notes": [
         "Independent of the preceding Farey-product/tail lemmas and of all spectral estimates."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "rem:negative",
@@ -992,7 +1021,8 @@
         "Lower negative-moment bound: Jensen and only the s=1 upper bound in Theorem 1.6; no use of its covering or lower-moment clauses.",
         "Divergence at and below -2: local polar integral at the origin.",
         "No statement for s=0 is made here."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "prop:long",
@@ -1021,7 +1051,8 @@
         "The supporting equation (2.9) is defined in spectral_dependencies.json.",
         "Montgomery-Vaughan enters through Lemma 2.8, not as an additional direct invocation.",
         "Lemma 2.7 is not needed for the elementary separation argument."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:poisson",
@@ -1059,7 +1090,8 @@
       "notes": [
         "The weight w is defined in the introduction at lines 289-291 and recalled at line 1187.",
         "The separate Plancherel theorem used in Section 3 is not an input here."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:exact",
@@ -1087,7 +1119,8 @@
       "notes": [
         "The determinant-one classification is proved directly; no theorem on ordinary Farey correlations is invoked.",
         "The proof does not use Proposition 6.1 or the large sieve."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "lem:positive",
@@ -1114,7 +1147,8 @@
       "references": [],
       "notes": [
         "Equation (1.19) supplies a definition only; there is no proof edge from Theorem 1.7 to this lemma."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "step:low-kernel-integrals",
@@ -1153,7 +1187,8 @@
           "role": "K integral"
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:symmetries",
@@ -1177,7 +1212,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:divisor-small-power",
@@ -1202,7 +1238,8 @@
           "role": "divisor bound"
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:selberg-sum",
@@ -1226,7 +1263,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:axes",
@@ -1256,7 +1294,8 @@
           "role": "Ramanujan-sum formula"
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:farey-gap",
@@ -1280,7 +1319,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:farey-nesting",
@@ -1301,7 +1341,8 @@
       "references": [],
       "notes": [
         "Uses the definition of the Farey sequence, not Lemma 2.7."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "eq:farey-separation",
@@ -1327,7 +1368,8 @@
       "references": [],
       "notes": [
         "Proof is by denominator arithmetic, split into c!=d and c=d. It does not use adjacency and does not depend on Lemma 2.7."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "step:large-sieve-endpoint-sums",
@@ -1357,7 +1399,8 @@
           "role": "endpoint-sum derivation"
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:ks-repetition-and-arcs",
@@ -1382,7 +1425,8 @@
           "role": "base distinct-point inequality"
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:twisted-spectral-decomposition",
@@ -1436,7 +1480,8 @@
           "role": "method attribution"
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:elementary",
@@ -1460,7 +1505,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:mellin",
@@ -1484,7 +1530,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:plancherel",
@@ -1516,7 +1563,8 @@
       ],
       "notes": [
         "This identity needs the definitions of the weights and B_sigma, not Lemma 3.1's estimate. Equation (1.24) in the introduction is the same identity announced earlier."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "eq:smooth-bound",
@@ -1540,7 +1588,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:remove-annular-weights",
@@ -1559,7 +1608,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:cumulative-dyadic-height",
@@ -1583,7 +1633,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:exceptional-real-cutoffs",
@@ -1602,7 +1653,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:vector-Abel-summation",
@@ -1632,7 +1684,8 @@
       "references": [],
       "notes": [
         "As a method node this is independent of a specific input estimate. Corollary 3.3 supplies Theorem 1.1 as that input; Remark 3.5 supplies Proposition 3.4 instead. Do not make the method node depend on Corollary 3.3's conclusion."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "step:two-frequency-reduction",
@@ -1660,7 +1713,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "geom:difference-fourier",
@@ -1679,7 +1733,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "geom:diagonal-removal",
@@ -1698,7 +1753,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:pair-block",
@@ -1724,7 +1780,8 @@
       "references": [],
       "notes": [
         "The j=0 blocks include the coordinate axes; remove k=(0,0) before using Proposition 3.4."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:pair-upper",
@@ -1743,7 +1800,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "geom:first-coordinate-injectivity",
@@ -1764,7 +1822,8 @@
       "references": [],
       "notes": [
         "Uniqueness of reduced denominator and of the modular inverse; includes the modulus-one origin."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:pair-lower",
@@ -1785,7 +1844,8 @@
       "references": [],
       "notes": [
         "No spectral input and no upper discrepancy estimate."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:covering-upper",
@@ -1806,7 +1866,8 @@
       "references": [],
       "notes": [
         "Choose closed Farey intervals at rational endpoints; the constructed lift lies inside their open product."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "eq:gap-monotone",
@@ -1830,7 +1891,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:layer-cake",
@@ -1854,7 +1916,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "geom:positive-moment-upper",
@@ -1875,7 +1938,8 @@
       "references": [],
       "notes": [
         "The first logarithm is used for s<=2 and the second for s>2. The support cutoff comes from the already proved upper covering bound."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "eq:counting-lower",
@@ -1899,7 +1963,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:square-integral",
@@ -1923,7 +1988,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "geom:supercritical-lower",
@@ -1942,7 +2008,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "eq:distance-lower",
@@ -1968,7 +2035,8 @@
       "references": [],
       "notes": [
         "This is the source of the two independent harmonic denominator sums."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:totient-harmonic",
@@ -1989,7 +2057,8 @@
       "references": [],
       "notes": [
         "Derived in the manuscript; do not turn it into an uncited dependence on a specialized external theorem."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:critical-lower",
@@ -2008,7 +2077,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "geom:empty-tangent-disc",
@@ -2029,7 +2099,8 @@
       "references": [],
       "notes": [
         "This is independent of Lemma 5.5; do not connect the empty-rectangle criterion as a required predecessor."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:negative-upper",
@@ -2050,7 +2121,8 @@
       "references": [],
       "notes": [
         "Proves finiteness before using Jensen; negative powers at the finitely many points of P_X are harmless measure-zero singularities."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:negative-lower",
@@ -2071,7 +2143,8 @@
       "references": [],
       "notes": [
         "The upper first-moment bound gives the lower negative-moment bound because s<0. Finiteness was already proved in geom:negative-upper, but extended Jensen also gives the lower inequality without using that estimate. Do not reverse the roles."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "geom:negative-divergence",
@@ -2092,7 +2165,8 @@
       "references": [],
       "notes": [
         "No positive-moment or Farey estimate is needed."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "support:cardinality-comparison",
@@ -2116,7 +2190,8 @@
           "locator": "Theorem 330"
         }
       ],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "support:cardinality-upper",
@@ -2135,7 +2210,8 @@
       "tex_label": null,
       "equations": [],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:long-trig-polynomial",
@@ -2159,7 +2235,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:determinant-one-pairs",
@@ -2183,7 +2260,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "step:coprime-lattice-sum",
@@ -2204,7 +2282,8 @@
       "references": [],
       "notes": [
         "The lattice estimate itself is proved locally. Lemma 6.3 connects this coprime sum with the weighted moment, at the level of Theorem 1.7."
-      ]
+      ],
+      "certification_status": "pending"
     },
     {
       "id": "step:abel-variation-localization",
@@ -2236,7 +2315,8 @@
         }
       ],
       "references": [],
-      "notes": []
+      "notes": [],
+      "certification_status": "pending"
     },
     {
       "id": "external:brs-spectral",
@@ -3463,7 +3543,8 @@
           "lem:window",
           "lem:transforms",
           "lem:low"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:height-core",
@@ -3474,7 +3555,8 @@
           "lem:twist",
           "lem:annulus",
           "lem:weil"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:height-results",
@@ -3486,7 +3568,8 @@
           "thm:short",
           "cor:most",
           "cor:weighted"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:two-frequency",
@@ -3499,7 +3582,8 @@
           "rem:weighted-two",
           "lem:ks",
           "lem:pair-pointwise"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:discrepancy",
@@ -3509,7 +3593,8 @@
         "members": [
           "thm:pair-height",
           "cor:pair-height-most"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:geometry",
@@ -3523,7 +3608,8 @@
           "lem:product-tail",
           "lem:distance-tail",
           "lem:empty"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:distance",
@@ -3533,7 +3619,8 @@
         "members": [
           "thm:distance",
           "rem:negative"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:separation",
@@ -3542,7 +3629,8 @@
         "short_title": "Equation (2.9)",
         "members": [
           "eq:farey-separation"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:large-sieve",
@@ -3552,7 +3640,8 @@
         "members": [
           "lem:sieve",
           "prop:long"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:farey-correction",
@@ -3564,7 +3653,8 @@
           "lem:exact",
           "lem:positive",
           "thm:correction"
-        ]
+        ],
+        "certification_status": "pending"
       },
       {
         "id": "ov:obstruction",
@@ -3573,7 +3663,8 @@
         "short_title": "Corollary 1.8",
         "members": [
           "cor:obstruction"
-        ]
+        ],
+        "certification_status": "pending"
       }
     ],
     "edges": [

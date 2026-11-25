@@ -77,7 +77,9 @@ The complete documented graph has **92 nodes and 112 edges**. Its supporting nod
 
 **Literature convention:** cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application. The [numbered-statement graph](docs/dependency_graph.png) shows these inputs in a separate reference row, following the model repository. [PDF](docs/dependency_graph.pdf) and [SVG](docs/dependency_graph.svg) versions are available for enlargement.
 
-The inventory distinguishes statements proved in the manuscript from cited inputs. These descriptions report the structure of the paper; they are not proof-assistant certification. There are currently no Lean files, theorem exports, or formal build targets.
+The graphs use the model repository's status colours: **yellow** for pending internal entries, **green** reserved for certified entries, and **purple** for trusted reference boxes or hexagons. Literature arrows are dashed purple; proof-method reuse is shown by dashed grey arrows explicitly labelled **method reuse**. The [dependency guide](DEPENDENCIES.md#meaning-of-an-arrow) records the exact palette.
+
+Every internal entry is currently pending because formalization has not started. Pending is a certification status, separate from the paper's mathematical audit. The inventory distinguishes statements proved in the manuscript from cited inputs. There are currently no Lean files, theorem exports, or formal build targets.
 
 ## Source baseline
 

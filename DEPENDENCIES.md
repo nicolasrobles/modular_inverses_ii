@@ -21,16 +21,17 @@ An arrow points **from a prerequisite to a statement or calculation that uses it
 | Appearance | Meaning |
 | --- | --- |
 | Solid grey arrow | A mathematical input: an identity, estimate, statement, or supporting calculation |
-| Dashed orange arrow | A trusted literature input at the locator recorded in the inventory |
-| Dashed purple arrow | Reuse of a proof method, rather than use of that result's numerical conclusion |
-| Blue or cyan box | A theorem, corollary, or proposition; the label specifies the kind |
-| White box | A lemma |
-| Dashed grey box | A numbered remark |
-| Pale ellipse | A supporting calculation or elementary fact in the manuscript |
-| Orange hexagon | A literature input |
-| Orange box in the reference row | A group of trusted literature inputs from one reference work |
+| Dashed purple arrow (`#8d79bc`) | A trusted literature input at the locator recorded in the inventory |
+| Dashed grey arrow labelled **method reuse** | Reuse of a proof method, rather than use of that result's numerical conclusion |
+| Yellow node (`#fff4dc` fill, `#b88023` border) | An internal entry pending certification |
+| Green node (`#e1f5df` fill, `#408342` border) | A certified internal entry; this colour is reserved for future certification |
+| Box | A numbered statement; the label specifies its kind |
+| Dashed box | A numbered remark |
+| Ellipse | A supporting calculation or elementary fact in the manuscript |
+| Purple hexagon (`#eeeafd` fill, `#7762b4` border) | A trusted literature input |
+| Purple box in the reference row (same fill and border) | A group of trusted literature inputs from one reference work |
 
-Colours do not indicate verification or formalization status. None of the entries is a Lean declaration.
+Formalization has not started, so every internal entry is currently pending (yellow). Pending records certification status, which is separate from the paper's mathematical audit. Green is reserved for certified entries; trusted literature inputs are purple.
 
 **Literature convention:** cited literature results are treated as trusted inputs and are not reproved here. Their precise statements, hypotheses, parameter ranges, and normalizations must match each application. The reference row makes this scope explicit, as in the model repository.
 
@@ -57,7 +58,7 @@ Two consequences follow from Lemma 3.2:
 
 The proof of Theorem 1.1 does not cite Theorem 1.2 as an intervening theorem. Its direct input is Lemma 3.2. From Theorem 1.1, Chebyshev gives [Corollary 1.3](INVENTORY.md#cor-most), and vector partial summation gives [Corollary 3.3](INVENTORY.md#cor-weighted).
 
-Selberg's identity and the separate Ramanujan-sum bounds on the axes extend the height estimate to the frequency rectangle in [Proposition 3.4](INVENTORY.md#prop-two). [Remark 3.5](INVENTORY.md#rem-weighted-two) uses Proposition 3.4 as its numerical estimate and reuses the proof of Corollary 3.3. The latter relation is the dashed purple arrow.
+Selberg's identity and the separate Ramanujan-sum bounds on the axes extend the height estimate to the frequency rectangle in [Proposition 3.4](INVENTORY.md#prop-two). [Remark 3.5](INVENTORY.md#rem-weighted-two) uses Proposition 3.4 as its numerical estimate and reuses the proof of Corollary 3.3. The latter relation is the dashed grey arrow labelled **method reuse**.
 
 ## 2. Pair-difference discrepancy
 
