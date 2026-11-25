@@ -1,0 +1,40 @@
+digraph dependencies {
+  graph [
+    rankdir="TB",
+    bgcolor="white",
+    pad="0.3",
+    nodesep="0.45",
+    ranksep="0.62",
+    splines="spline",
+    outputorder="edgesfirst",
+    fontname="DejaVu Sans",
+    fontsize="17",
+    fontcolor="#0F172A",
+    labelloc="t",
+    label="Height averages of Kloosterman sums and modular inverses\nMain proof branches · v17",
+  ];
+  edge [color="#64748B", arrowsize="0.65", penwidth="1.0", fontname="DejaVu Sans", fontsize="9"];
+  "ov:spectral" [label="Spectral inputs\nLemmas 2.1-2.4", tooltip="Spectral inputs", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:height-core" [label="Twisted and moving-interval means\nLemmas 3.1-3.2; Weil bound", tooltip="Twisted and moving-interval means", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:height-results" [label="Height-averaged moments\nTheorems 1.1-1.2; Corollaries 1.3, 3.3", tooltip="Height-averaged moments", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:two-frequency" [label="Two-frequency and discrepancy tools\nLemma 2.6; Proposition 3.4; Remark 3.5\nKoksma-Szusz; Lemma 4.1", tooltip="Two-frequency and discrepancy tools", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:discrepancy" [label="Pair-difference discrepancy\nTheorem 1.4; Corollary 1.5", tooltip="Pair-difference discrepancy", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:geometry" [label="Elementary Farey geometry\nLemma 2.7; Lemmas 5.1-5.5\nCounting and empty tangent disc", tooltip="Elementary Farey geometry", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:distance" [label="Distance moments and covering\nTheorem 1.6; Remark 5.6", tooltip="Distance moments and covering", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:separation" [label="Circular Farey separation\nEquation (2.9)", tooltip="Circular Farey separation", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:large-sieve" [label="Classical large sieve\nLemma 2.8; Proposition 6.1", tooltip="Classical large sieve", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:farey-correction" [label="Exact weighted Farey calculation\nLemmas 6.2-6.4; Theorem 1.7", tooltip="Exact weighted Farey calculation", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  "ov:obstruction" [label="Sharp interval obstruction\nCorollary 1.8", tooltip="Sharp interval obstruction", shape="box", style="rounded,filled", fillcolor="#DBEAFE", color="#2563EB", fontcolor="#172554", fontname="DejaVu Sans", fontsize="11", margin="0.14,0.10", penwidth="1.4"];
+  { rank="same"; "ov:spectral"; "ov:separation"; "ov:farey-correction"; }
+  { rank="sink"; "ov:discrepancy"; "ov:distance"; "ov:obstruction"; }
+  "ov:spectral" -> "ov:height-core" [tooltip="Spectral inputs prove the twisted mean; it enters the moving-interval bound."];
+  "ov:height-core" -> "ov:height-results" [tooltip="The moving-interval bound gives both main height theorems."];
+  "ov:height-results" -> "ov:two-frequency" [tooltip="Theorem 1.1 enters the Selberg reduction; the weighted method is reused."];
+  "ov:two-frequency" -> "ov:discrepancy" [tooltip="Proposition 3.4 and Lemma 4.1 give the upper discrepancy bound."];
+  "ov:geometry" -> "ov:distance" [tooltip="Farey products, tails, empty squares and the tangent disc prove the distance results."];
+  "ov:separation" -> "ov:geometry" [tooltip="Circular separation ensures that the critical empty-square packing is disjoint."];
+  "ov:separation" -> "ov:discrepancy" [tooltip="The discrepancy lower bound uses an empty strip."];
+  "ov:separation" -> "ov:large-sieve" [tooltip="Separation of the specific frequencies gives Proposition 6.1."];
+  "ov:large-sieve" -> "ov:obstruction" [tooltip="A uniform interval remainder bound allows localization."];
+  "ov:farey-correction" -> "ov:obstruction" [tooltip="A positive weighted correction forces a large sharp-interval remainder."];
+}

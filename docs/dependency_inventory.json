@@ -1,0 +1,3636 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "title": "Height averages of Kloosterman sums and modular inverses",
+    "authors": [
+      "Debmalya Basak",
+      "Sneha Chaubey",
+      "Nicolas Robles",
+      "Igor E. Shparlinski",
+      "Alexandru Zaharescu"
+    ],
+    "source_filename": "second_moment_int_v17.tex",
+    "source_sha256": "a13de91bb0a5d8c1c3b0ef8ec0054932b48eea5878202ae4414bd7f4e8315a1f",
+    "source_version": "v17",
+    "source_included": false,
+    "formalization_status": "not_started",
+    "updated": "2026-11-25",
+    "repository_url": "https://github.com/nicolasrobles/modular_inverses_ii",
+    "model_repository_url": "https://github.com/nicolasrobles/quaternary-quadratic-forms",
+    "model_commit": "b0465efa32fae600039f120094d10f7e533f8cd3",
+    "counts": {
+      "theorem": 5,
+      "corollary": 4,
+      "lemma": 20,
+      "proposition": 2,
+      "remark": 2
+    }
+  },
+  "conventions": {
+    "direction": "Prerequisite to consequence.",
+    "proof": "A mathematical statement, identity, estimate, or calculation used in the written proof.",
+    "method": "Reuse of a proof method, distinct from using the numerical assertion of that result.",
+    "literature": "A cited external input at the precise locator recorded in the inventory.",
+    "source_locators": "One-based line numbers in the identified v17 source. PDF pages are from its compiled auxiliary file.",
+    "synthetic_ids": "The prefixes step:, geom:, support:, external:, and ov: are repository identifiers, not new manuscript labels or theorem numbers.",
+    "scope": "Numbered statements and substantive supporting steps. Routine definitions and ambient arithmetic, calculus, measure theory and finite-sum manipulations are described where used, not represented as a formal axiomatic foundation."
+  },
+  "nodes": [
+    {
+      "id": "thm:height",
+      "kind": "theorem",
+      "number": "1.1",
+      "title": "Height-averaged cumulative second moment",
+      "short_title": "Cumulative height mean",
+      "summary": "For real $N,X\\ge1$, the height average of the second moment over $N\\le\\lvert n\\rvert<2N$ is $\\ll_\\varepsilon (NX)^\\varepsilon NX^2$. Both frequency signs are included.",
+      "section": "1",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "thm:height",
+      "source": {
+        "statement_lines": [
+          199,
+          204
+        ],
+        "proof_lines": [
+          788,
+          806
+        ],
+        "statement_page": 3
+      },
+      "references": [],
+      "notes": [
+        "The actual proof invokes Lemma 3.2 directly, not the statement of Theorem 1.2. Theorem 1.2 is an equivalent presentation of the annular bound, but it is not the direct citation in this proof."
+      ]
+    },
+    {
+      "id": "thm:short",
+      "kind": "theorem",
+      "number": "1.2",
+      "title": "Height mean for moving intervals of moduli",
+      "short_title": "Moving intervals",
+      "summary": "For $N,X\\ge1$ and $0<\\delta\\le1$, restricting the moduli to $(Y,(1+\\delta)Y]$ gives the height-mean bound $\\ll_\\varepsilon (NX)^\\varepsilon X^2\\{N\\delta+\\min(1,N\\delta^2X)\\}$.",
+      "section": "1",
+      "branch": "height",
+      "origin": "Reformulation of Lemma 3.2",
+      "tex_label": "thm:short",
+      "source": {
+        "statement_lines": [
+          216,
+          221
+        ],
+        "proof_lines": [
+          780,
+          782
+        ],
+        "statement_page": 3
+      },
+      "references": [],
+      "notes": [
+        "Do not create an edge from Theorem 1.2 to Lemma 3.2 merely because the introduction announces the theorem before its proof."
+      ]
+    },
+    {
+      "id": "cor:most",
+      "kind": "corollary",
+      "number": "1.3",
+      "title": "Exceptional heights for all real frequency cutoffs",
+      "short_title": "Exceptional heights",
+      "summary": "For $a,\\kappa,\\eta>0$ and $X\\ge2$, outside a set of Lebesgue measure $O_{a,\\kappa,\\eta}(X^{1-\\kappa+\\eta})$, the bound $\\mathcal K_2(N;Y)\\le3NX^{2+\\kappa}$ holds simultaneously for every real $1\\le N\\le X^a$.",
+      "section": "1",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "cor:most",
+      "source": {
+        "statement_lines": [
+          225,
+          231
+        ],
+        "proof_lines": [
+          808,
+          823
+        ],
+        "statement_page": 4
+      },
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "thm:pair-height",
+      "kind": "theorem",
+      "number": "1.4",
+      "title": "Height-averaged discrepancy of pair differences",
+      "short_title": "Pair-difference discrepancy",
+      "summary": "For $X\\ge2$, the height average of $\\mathcal D_Y+\\mathcal D_Y^*$ is $\\ll_\\varepsilon X^{-2+\\varepsilon}$. Each discrepancy is at least $\\lfloor Y\\rfloor^{-2}$ for every $Y\\ge2$. The supremum over rectangles is inside the average.",
+      "section": "1",
+      "branch": "discrepancy",
+      "origin": "Proved in v17",
+      "tex_label": "thm:pair-height",
+      "source": {
+        "statement_lines": [
+          245,
+          254
+        ],
+        "proof_lines": [
+          927,
+          943
+        ],
+        "statement_page": 4
+      },
+      "references": [],
+      "notes": [
+        "Only the upper estimate is spectral via Proposition 3.4. The pointwise lower bound is elementary."
+      ]
+    },
+    {
+      "id": "cor:pair-height-most",
+      "kind": "corollary",
+      "number": "1.5",
+      "title": "Exceptional heights for pair discrepancy",
+      "short_title": "Exceptional discrepancy heights",
+      "summary": "For $\\kappa,\\eta>0$ and $X\\ge2$, both discrepancies are at most $X^{-2+\\kappa}$ outside a set of Lebesgue measure $O_{\\kappa,\\eta}(X^{1-\\kappa+\\eta})$.",
+      "section": "1",
+      "branch": "discrepancy",
+      "origin": "Proved in v17",
+      "tex_label": "cor:pair-height-most",
+      "source": {
+        "statement_lines": [
+          258,
+          260
+        ],
+        "proof_lines": [
+          945,
+          951
+        ],
+        "statement_page": 4
+      },
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "thm:distance",
+      "kind": "theorem",
+      "number": "1.6",
+      "title": "Distance moments and covering radius",
+      "short_title": "Distance moments\nand covering radius",
+      "summary": "For $X\\ge2$, the positive distance moments have orders $X^{-s}$ for $0<s<2$, $X^{-2}(\\log X)^2$ for $s=2$, and $X^{-1-s/2}$ for $s>2$. The covering radius lies between $\\tfrac12X^{-1/2}$ and $4X^{-1/2}$.",
+      "section": "1",
+      "branch": "distance",
+      "origin": "Proved in v17",
+      "tex_label": "thm:distance",
+      "source": {
+        "statement_lines": [
+          264,
+          278
+        ],
+        "proof_lines": [
+          [
+            977,
+            979
+          ],
+          [
+            1048,
+            1068
+          ],
+          [
+            1098,
+            1125
+          ],
+          [
+            1127,
+            1141
+          ]
+        ],
+        "statement_page": 4
+      },
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "thm:correction",
+      "kind": "theorem",
+      "number": "1.7",
+      "title": "Exact weighted Farey correction and its asymptotic",
+      "short_title": "Positive weighted\nFarey correction",
+      "summary": "For integer $Q\\ge2$, $1/2\\le\\tau<1$ and $L=\\tau Q^2$, an exact sinc-squared weighted second moment isolates determinant-one Farey pairs. Its asymptotic is $LN_Q+(12\\tau/\\pi^2)I(\\tau)Q^4+O(Q^3\\log(2Q))$, uniformly in $\\tau$, with $I(\\tau)>0$.",
+      "section": "1",
+      "branch": "long_range",
+      "origin": "Proved in v17",
+      "tex_label": "thm:correction",
+      "source": {
+        "statement_lines": [
+          293,
+          306
+        ],
+        "proof_lines": [
+          1269,
+          1285
+        ],
+        "statement_page": 5
+      },
+      "references": [],
+      "notes": [
+        "The uniform Riemann-sum estimate is proved inside this theorem's proof.",
+        "Neither Proposition 6.1 nor Lemma 2.8 is an input."
+      ]
+    },
+    {
+      "id": "cor:obstruction",
+      "kind": "corollary",
+      "number": "1.8",
+      "title": "Sharpness of the long-interval remainder",
+      "short_title": "Sharp interval obstruction",
+      "summary": "For every sufficiently large integer $Q$, some symmetric interval with radius $T\\asymp Q^2$ has a second-moment remainder whose absolute value is $\\gg Q^4$. The constants are absolute; this is an existence statement for the interval.",
+      "section": "1",
+      "branch": "long_range",
+      "origin": "Proved in v17",
+      "tex_label": "cor:obstruction",
+      "source": {
+        "statement_lines": [
+          310,
+          315
+        ],
+        "proof_lines": [
+          1298,
+          1314
+        ],
+        "statement_page": 5
+      },
+      "references": [],
+      "notes": [
+        "This is an absolute-value lower bound for the sharp interval remainder; it does not assert positivity of that sharp remainder.",
+        "The sharp cardinality asymptotic N_Q~(3/pi^2)Q^2 is not needed in the proof."
+      ]
+    },
+    {
+      "id": "lem:kuznetsov",
+      "kind": "lemma",
+      "number": "2.1",
+      "title": "Kuznetsov formula and local spectral large sieve",
+      "short_title": "Kuznetsov and\nspectral large sieve",
+      "summary": "Records the inverse Kuznetsov formula for both signs and the local spectral large sieve on a window of width $G$, for $N,T\\ge1$ and $1\\le G\\le T$. The formula uses the signed measure $dm=\\chi\\,dm_0$; the large sieve uses positive $dm_0$.",
+      "section": "2",
+      "branch": "height",
+      "origin": "Cited input",
+      "tex_label": "lem:kuznetsov",
+      "source": {
+        "statement_lines": [
+          396,
+          412
+        ],
+        "proof_lines": null,
+        "statement_page": 8
+      },
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 4.3",
+          "role": "imported formula and large-sieve input",
+          "citation_lines": [
+            394,
+            414
+          ]
+        },
+        {
+          "bibkey": "BRS",
+          "locator": "Section 4",
+          "role": "spectral notation and normalization",
+          "citation_lines": [
+            380,
+            380
+          ]
+        }
+      ],
+      "notes": [
+        "Part (i) has the signed spectral measure; part (ii) has the positive spectral measure. These are two parts of one numbered lemma."
+      ]
+    },
+    {
+      "id": "lem:window",
+      "kind": "lemma",
+      "number": "2.2",
+      "title": "Dual spectral-window second moment",
+      "short_title": "Dual spectral windows",
+      "summary": "Deduces a dual second-moment estimate $\\ll_\\eta F^2TG(TG+N)^{1+\\eta}$ for a spectral-window integral with a multiplier bounded by $F$, for either sign.",
+      "section": "2",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "lem:window",
+      "source": {
+        "statement_lines": [
+          416,
+          421
+        ],
+        "proof_lines": [
+          423,
+          433
+        ],
+        "statement_page": 8
+      },
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Corollary 4.5",
+          "role": "source of the statement, not an additional input after the local derivation",
+          "citation_lines": [
+            414,
+            414
+          ]
+        },
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 4.4 and Corollary 4.5",
+          "role": "attribution of the duality deduction",
+          "citation_lines": [
+            414,
+            414
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "lem:transforms",
+      "kind": "lemma",
+      "number": "2.3",
+      "title": "Twisted transforms away from the low spectrum",
+      "short_title": "High and holomorphic\nBessel transforms",
+      "summary": "Records the uniform-in-$r$ twisted Bessel estimates in the imaginary range $\\lvert t\\rvert\\ge1$ and the holomorphic range $k\\ge1$. The low imaginary spectrum is treated separately in Lemma 2.4.",
+      "section": "2",
+      "branch": "height",
+      "origin": "Cited input",
+      "tex_label": "lem:transforms",
+      "source": {
+        "statement_lines": [
+          441,
+          450
+        ],
+        "proof_lines": null,
+        "statement_page": 9
+      },
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 4.2",
+          "role": "transform estimates",
+          "citation_lines": [
+            439,
+            439
+          ]
+        }
+      ],
+      "notes": [
+        "This is Lemma 2.3, not the low-spectrum bound. The imaginary-parameter part is only asserted here for |t|>=1."
+      ]
+    },
+    {
+      "id": "lem:low",
+      "kind": "lemma",
+      "number": "2.4",
+      "title": "Low-spectrum transform estimate",
+      "short_title": "Low-spectrum transform",
+      "summary": "For $\\lvert t\\rvert\\le1$ and $Z>0$, both twisted transforms are $\\ll_V1+\\log^+(1/Z)$, uniformly in the real twist $r$.",
+      "section": "2",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "lem:low",
+      "source": {
+        "statement_lines": [
+          454,
+          460
+        ],
+        "proof_lines": [
+          462,
+          491
+        ],
+        "statement_page": 9
+      },
+      "references": [
+        {
+          "bibkey": "DLMF",
+          "locator": "Equation (10.9.6)",
+          "role": "Schlaefli integral for J_nu",
+          "citation_lines": [
+            469,
+            471
+          ]
+        },
+        {
+          "bibkey": "DLMF",
+          "locator": "Equation (10.32.9)",
+          "role": "Integral representation for K_(2it)",
+          "citation_lines": [
+            477,
+            479
+          ]
+        }
+      ],
+      "notes": [
+        "Independent of the high-spectrum estimate in Lemma 2.3; do not draw a dependency 2.3 -> 2.4."
+      ]
+    },
+    {
+      "id": "lem:weil",
+      "kind": "lemma",
+      "number": "2.5",
+      "title": "Weil bound for Kloosterman sums",
+      "short_title": "Weil bound",
+      "summary": "For all integer $m,n$ and $c\\ge1$, $\\lvert S(m,n;c)\\rvert\\le(m,n,c)^{1/2}c^{1/2}\\tau(c)$.",
+      "section": "2",
+      "branch": "height",
+      "origin": "Cited input",
+      "tex_label": "lem:weil",
+      "source": {
+        "statement_lines": [
+          501,
+          506
+        ],
+        "proof_lines": null,
+        "statement_page": 10
+      },
+      "references": [
+        {
+          "bibkey": "IK",
+          "locator": "Corollary 11.12",
+          "role": "Weil bound",
+          "citation_lines": [
+            499,
+            499
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "lem:selberg",
+      "kind": "lemma",
+      "number": "2.6",
+      "title": "Selberg's identity",
+      "short_title": "Selberg identity",
+      "summary": "Expresses $S(m,n;c)$, for integer arguments, as a divisor sum of Kloosterman sums with one argument equal to one. The cumulative form is equation (2.6).",
+      "section": "2",
+      "branch": "height",
+      "origin": "Cited input",
+      "tex_label": "lem:selberg",
+      "source": {
+        "statement_lines": [
+          510,
+          515
+        ],
+        "proof_lines": null,
+        "statement_page": 10
+      },
+      "references": [
+        {
+          "bibkey": "Xi",
+          "locator": "Equation (1.1)",
+          "role": "cited elementary proof for all integer arguments",
+          "citation_lines": [
+            517,
+            517
+          ]
+        },
+        {
+          "bibkey": "Selberg38",
+          "locator": null,
+          "role": "historical announcement; no numbered locator supplied",
+          "citation_lines": [
+            517,
+            517
+          ]
+        },
+        {
+          "bibkey": "Kuznetsov",
+          "locator": null,
+          "role": "historical first published proof; no numbered locator supplied at this citation",
+          "citation_lines": [
+            517,
+            517
+          ]
+        }
+      ],
+      "notes": [
+        "The sum over divisors is positive divisors of the gcd. The all-zero frequency is not used in the later two-frequency mean."
+      ]
+    },
+    {
+      "id": "lem:farey",
+      "kind": "lemma",
+      "number": "2.7",
+      "title": "Consecutive Farey fractions",
+      "short_title": "Farey adjacency",
+      "summary": "Consecutive fractions of Farey order $Q\\ge1$ have determinant one and denominators whose sum exceeds $Q$.",
+      "section": "2",
+      "branch": "distance",
+      "origin": "Cited input",
+      "tex_label": "lem:farey",
+      "source": {
+        "statement_lines": [
+          533,
+          538
+        ],
+        "proof_lines": null,
+        "statement_page": 11
+      },
+      "references": [
+        {
+          "bibkey": "HW",
+          "locator": "Theorems 28 and 30",
+          "role": "adjacency identities",
+          "citation_lines": [
+            531,
+            531
+          ]
+        }
+      ],
+      "notes": [
+        "The adjacent-gap bounds are derived from this lemma. Nesting and the circular separation estimate recorded nearby have their own elementary arguments and are not applications of this lemma."
+      ]
+    },
+    {
+      "id": "lem:sieve",
+      "kind": "lemma",
+      "number": "2.8",
+      "title": "Two-sided large-sieve remainder",
+      "short_title": "Two-sided large sieve",
+      "summary": "For frequencies separated by $\\lambda$ modulo one and any integer interval of length $H\\ge1$, the absolute error from $H\\sum_j\\lvert y_j\\rvert^2$ is at most $\\lambda^{-1}\\sum_j\\lvert y_j\\rvert^2$.",
+      "section": "2",
+      "branch": "long_range",
+      "origin": "Proved in v17",
+      "tex_label": "lem:sieve",
+      "source": {
+        "statement_lines": [
+          554,
+          559
+        ],
+        "proof_lines": [
+          561,
+          571
+        ],
+        "statement_page": 11
+      },
+      "references": [
+        {
+          "bibkey": "MV",
+          "locator": "Proof of Theorem 1",
+          "role": "argument being reproduced",
+          "citation_lines": [
+            562,
+            562
+          ]
+        },
+        {
+          "bibkey": "MV",
+          "locator": "Lemma 2, equation (2.1)",
+          "role": "cosecant/Hilbert inequality bounding each endpoint sum",
+          "citation_lines": [
+            570,
+            570
+          ]
+        }
+      ],
+      "notes": [
+        "No Farey lemma is needed for this abstract inequality. Farey separation is used only when it is applied later to the manuscript's specific frequencies."
+      ]
+    },
+    {
+      "id": "lem:ks",
+      "kind": "lemma",
+      "number": "2.9",
+      "title": "Koksma-Szusz inequality with repetitions and general arcs",
+      "short_title": "Koksma-Szusz\nwith repetitions",
+      "summary": "Bounds rectangular discrepancy of a nonempty finite sequence in $\\mathbb T^2$ by a Fourier sum and a truncation term, allowing repeated points and closed or half-open arcs, including empty and full arcs.",
+      "section": "2",
+      "branch": "discrepancy",
+      "origin": "Extension of a cited inequality, proved in v17",
+      "tex_label": "lem:ks",
+      "source": {
+        "statement_lines": [
+          573,
+          579
+        ],
+        "proof_lines": [
+          581,
+          587
+        ],
+        "statement_page": 11
+      },
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 2.1",
+          "role": "base inequality for distinct points and closed proper arcs",
+          "citation_lines": [
+            582,
+            582
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "lem:twist",
+      "kind": "lemma",
+      "number": "3.1",
+      "title": "Twisted second moment",
+      "short_title": "Twisted second moment",
+      "summary": "For a fixed smooth compactly supported $W$, $C,N\\ge1$ and real $r$, the second moment of the twisted smooth sums $B_\\sigma(n,r)$ is $\\ll_{\\varepsilon,W}(NC(1+\\lvert r\\rvert))^\\varepsilon(N+1+\\lvert r\\rvert)$.",
+      "section": "3",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "lem:twist",
+      "source": {
+        "statement_lines": [
+          597,
+          602
+        ],
+        "proof_lines": [
+          604,
+          680
+        ],
+        "statement_page": 12
+      },
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Section 4.4",
+          "role": "method attribution: the source argument is followed with r retained; the actual inputs are Lemmas 2.1-2.4",
+          "citation_lines": [
+            595,
+            595
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "lem:annulus",
+      "kind": "lemma",
+      "number": "3.2",
+      "title": "Height mean for moving annuli of moduli",
+      "short_title": "Moving-annulus mean",
+      "summary": "Proves the moving-interval height mean at a base height $C\\ge1$, with the factor $N\\delta+\\min(1,N\\delta^2C)$. Theorem 1.2 is the corresponding formulation with signed frequencies.",
+      "section": "3",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "lem:annulus",
+      "source": {
+        "statement_lines": [
+          689,
+          694
+        ],
+        "proof_lines": [
+          696,
+          778
+        ],
+        "statement_page": 14
+      },
+      "references": [
+        {
+          "bibkey": "Grafakos",
+          "locator": "Theorem 2.2.14 (4)",
+          "role": "Plancherel identity",
+          "citation_lines": [
+            739,
+            739
+          ]
+        },
+        {
+          "bibkey": "IK",
+          "locator": "Equation (1.81)",
+          "role": "divisor small-power bound invoked from the preliminary paragraph",
+          "citation_lines": [
+            508,
+            508
+          ]
+        }
+      ],
+      "notes": [
+        "The delta C<1 case is elementary. The spectral/smoothing argument is used only for delta C>=1."
+      ]
+    },
+    {
+      "id": "cor:weighted",
+      "kind": "corollary",
+      "number": "3.3",
+      "title": "Weighted cumulative height mean",
+      "short_title": "Weighted height mean",
+      "summary": "For $N,X\\ge1$, inserting the weight $1/c$ in the cumulative sums gives height-averaged second moment $\\ll_\\varepsilon(NX)^\\varepsilon N$.",
+      "section": "3",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "cor:weighted",
+      "source": {
+        "statement_lines": [
+          827,
+          832
+        ],
+        "proof_lines": [
+          834,
+          852
+        ],
+        "statement_page": 17
+      },
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "prop:two",
+      "kind": "proposition",
+      "number": "3.4",
+      "title": "Height mean over a frequency rectangle",
+      "short_title": "Two-frequency height mean",
+      "summary": "For $M,N,X\\ge1$, the height-averaged second moment over $\\lvert m\\rvert\\le M$, $\\lvert n\\rvert\\le N$, excluding $(0,0)$, is $\\ll_\\varepsilon(MNX)^\\varepsilon MNX^2$. Both coordinate axes are included.",
+      "section": "3",
+      "branch": "height",
+      "origin": "Proved in v17",
+      "tex_label": "prop:two",
+      "source": {
+        "statement_lines": [
+          858,
+          863
+        ],
+        "proof_lines": [
+          865,
+          888
+        ],
+        "statement_page": 17
+      },
+      "references": [
+        {
+          "bibkey": "IK",
+          "locator": "Equation (1.81)",
+          "role": "small-power divisor bounds, imported through the preliminary paragraph",
+          "citation_lines": [
+            508,
+            508
+          ]
+        },
+        {
+          "bibkey": "HW",
+          "locator": "Theorem 271",
+          "role": "Ramanujan-sum identity underlying the axis bound (2.7)",
+          "citation_lines": [
+            523,
+            523
+          ]
+        }
+      ],
+      "notes": [
+        "In a graph that includes unnumbered facts, use Lemma 2.6 -> equation (2.6) -> Proposition 3.4. In a numbered-statements-only graph the direct collapsed predecessor is Lemma 2.6."
+      ]
+    },
+    {
+      "id": "rem:weighted-two",
+      "kind": "remark",
+      "number": "3.5",
+      "title": "Weighted height mean over a frequency rectangle",
+      "short_title": "Weighted two-frequency mean",
+      "summary": "With the weight $1/c$, the same frequency rectangle has height-averaged second moment $\\ll_\\varepsilon(MNX)^\\varepsilon MN$. The proof of Corollary 3.3 is reused with Proposition 3.4 as the input estimate.",
+      "section": "3",
+      "branch": "height",
+      "origin": "Proof transfer stated in the remark",
+      "tex_label": "rem:weighted-two",
+      "source": {
+        "statement_lines": [
+          890,
+          896
+        ],
+        "proof_lines": [
+          891,
+          891
+        ],
+        "statement_page": 18
+      },
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "lem:pair-pointwise",
+      "kind": "lemma",
+      "number": "4.1",
+      "title": "Pointwise discrepancy of the difference measure",
+      "short_title": "Fourier discrepancy bound",
+      "summary": "For $Y\\ge2$ and integer $K\\ge1$, controls $\\mathcal D_Y$ by weighted squared Fourier coefficients and $1/K$, and proves $\\mathcal D_Y^*\\le\\mathcal D_Y+1/N_Y$.",
+      "section": "4",
+      "branch": "discrepancy",
+      "origin": "Proved in v17",
+      "tex_label": "lem:pair-pointwise",
+      "source": {
+        "statement_lines": [
+          902,
+          911
+        ],
+        "proof_lines": [
+          913,
+          925
+        ],
+        "statement_page": 18
+      },
+      "references": [],
+      "notes": [
+        "The Fourier coefficients of the difference multiset are |a_Y(k)|^2; repetitions and zero differences are retained in the first assertion."
+      ]
+    },
+    {
+      "id": "lem:farey-product",
+      "kind": "lemma",
+      "number": "5.1",
+      "title": "A modular-inverse point in a product of Farey gaps",
+      "short_title": "Points in Farey products",
+      "summary": "If integers $Q,R\\ge1$ satisfy $2QR\\le X$, every product of open consecutive Farey gaps of orders $Q$ and $R$ contains a lift of a point of $\\mathcal P_X$.",
+      "section": "5",
+      "branch": "distance",
+      "origin": "Proved in v17",
+      "tex_label": "lem:farey-product",
+      "source": {
+        "statement_lines": [
+          961,
+          963
+        ],
+        "proof_lines": [
+          965,
+          975
+        ],
+        "statement_page": 20
+      },
+      "references": [],
+      "notes": [
+        "Uses the determinant part of Lemma 2.7, not its denominator-sum part."
+      ]
+    },
+    {
+      "id": "lem:adaptive",
+      "kind": "lemma",
+      "number": "5.2",
+      "title": "Adaptive Farey orders and their tail",
+      "short_title": "Adaptive Farey orders",
+      "summary": "For $0<\\rho\\le1$ and irrational $x$, controls the least Farey order $R_\\rho(x)$ giving a gap of length at most $\\rho$. It proves the range $\\rho^{-1/2}\\le R_\\rho(x)\\le2/\\rho$ and a quadratic tail estimate.",
+      "section": "5",
+      "branch": "distance",
+      "origin": "Proved in v17",
+      "tex_label": "lem:adaptive",
+      "source": {
+        "statement_lines": [
+          989,
+          1002
+        ],
+        "proof_lines": [
+          1004,
+          1012
+        ],
+        "statement_page": 20
+      },
+      "references": [],
+      "notes": [
+        "R_rho is defined only on irrational coordinates; this suffices for the subsequent Lebesgue-measure arguments."
+      ]
+    },
+    {
+      "id": "lem:product-tail",
+      "kind": "lemma",
+      "number": "5.3",
+      "title": "Tail of a product of adaptive Farey orders",
+      "short_title": "Product tail",
+      "summary": "Bounds the tail of $\\rho R_\\rho(x)R_\\rho(y)$ by a quadratic decay times the smaller of two logarithmic factors, for $1\\le z\\le4/\\rho$; above this range the tail is empty on irrational-coordinate pairs.",
+      "section": "5",
+      "branch": "distance",
+      "origin": "Proved in v17",
+      "tex_label": "lem:product-tail",
+      "source": {
+        "statement_lines": [
+          1014,
+          1020
+        ],
+        "proof_lines": [
+          1022,
+          1030
+        ],
+        "statement_page": 21
+      },
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "lem:distance-tail",
+      "kind": "lemma",
+      "number": "5.4",
+      "title": "Tail of the distance to modular-inverse points",
+      "short_title": "Distance tail",
+      "summary": "For $X\\ge2$ and $t>0$, the measure of $\\{d_X>t\\}$ is $\\ll [1+\\min\\{\\log(2+Xt),\\log(2+1/(Xt^2))\\}]/(X^2t^2)$.",
+      "section": "5",
+      "branch": "distance",
+      "origin": "Proved in v17",
+      "tex_label": "lem:distance-tail",
+      "source": {
+        "statement_lines": [
+          1032,
+          1038
+        ],
+        "proof_lines": [
+          1040,
+          1046
+        ],
+        "statement_page": 21
+      },
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "lem:empty",
+      "kind": "lemma",
+      "number": "5.5",
+      "title": "An arithmetic criterion for empty rectangles",
+      "short_title": "Empty rectangles",
+      "summary": "Gives an explicit arithmetic inequality in the denominators of the rational corner and the side lengths that makes two oppositely oriented open rectangles empty of lifts of $\\mathcal P_X$.",
+      "section": "5",
+      "branch": "distance",
+      "origin": "Proved in v17",
+      "tex_label": "lem:empty",
+      "source": {
+        "statement_lines": [
+          1074,
+          1084
+        ],
+        "proof_lines": [
+          1086,
+          1096
+        ],
+        "statement_page": 22
+      },
+      "references": [],
+      "notes": [
+        "Independent of the preceding Farey-product/tail lemmas and of all spectral estimates."
+      ]
+    },
+    {
+      "id": "rem:negative",
+      "kind": "remark",
+      "number": "5.6",
+      "title": "Negative distance moments",
+      "short_title": "Negative distance moments",
+      "summary": "For $X\\ge2$ and $-2<s<0$, the distance moment has order $X^{-s}$. For $s\\le-2$ it diverges. The three assertions use disc counting, the positive first-moment upper bound, and a local singularity, respectively.",
+      "section": "5",
+      "branch": "distance",
+      "origin": "Proved in the remark",
+      "tex_label": "rem:negative",
+      "source": {
+        "statement_lines": [
+          1143,
+          1160
+        ],
+        "proof_lines": [
+          1143,
+          1160
+        ],
+        "statement_page": 24
+      },
+      "references": [],
+      "notes": [
+        "Upper negative-moment bound: cardinality and disc-union area, not the positive first moment.",
+        "Lower negative-moment bound: Jensen and only the s=1 upper bound in Theorem 1.6; no use of its covering or lower-moment clauses.",
+        "Divergence at and below -2: local polar integral at the origin.",
+        "No statement for s=0 is made here."
+      ]
+    },
+    {
+      "id": "prop:long",
+      "kind": "proposition",
+      "number": "6.1",
+      "title": "Second moment over an arbitrary integer interval",
+      "short_title": "Long-interval remainder",
+      "summary": "For integer $Q\\ge2$, $M\\in\\mathbb Z$ and integer $H\\ge1$, the second moment over $M<n\\le M+H$ differs from $HN_Q$ by at most $Q(Q-1)N_Q$.",
+      "section": "6",
+      "branch": "long_range",
+      "origin": "Proved in v17",
+      "tex_label": "prop:long",
+      "source": {
+        "statement_lines": [
+          1174,
+          1179
+        ],
+        "proof_lines": [
+          1181,
+          1183
+        ],
+        "statement_page": 24
+      },
+      "references": [],
+      "notes": [
+        "The supporting equation (2.9) is defined in spectral_dependencies.json.",
+        "Montgomery-Vaughan enters through Lemma 2.8, not as an additional direct invocation.",
+        "Lemma 2.7 is not needed for the elementary separation argument."
+      ]
+    },
+    {
+      "id": "lem:poisson",
+      "kind": "lemma",
+      "number": "6.2",
+      "title": "Poisson identity for the sinc-squared weight",
+      "short_title": "Poisson weight identity",
+      "summary": "For real $L\\ge2$, the absolutely convergent Fourier series of $w(n/L)$ equals the triangular kernel $L(1-L\\lVert\\theta\\rVert)_+$ for every real $\\theta$.",
+      "section": "6",
+      "branch": "long_range",
+      "origin": "Proved in v17",
+      "tex_label": "lem:poisson",
+      "source": {
+        "statement_lines": [
+          1189,
+          1195
+        ],
+        "proof_lines": [
+          1197,
+          1207
+        ],
+        "statement_page": 25
+      },
+      "references": [
+        {
+          "bibkey": "Grafakos",
+          "locator": "Theorem 3.2.8",
+          "role": "Poisson summation",
+          "citation_lines": [
+            1202,
+            1202
+          ]
+        }
+      ],
+      "notes": [
+        "The weight w is defined in the introduction at lines 289-291 and recalled at line 1187.",
+        "The separate Plancherel theorem used in Section 3 is not an input here."
+      ]
+    },
+    {
+      "id": "lem:exact",
+      "kind": "lemma",
+      "number": "6.3",
+      "title": "Exact contribution of determinant-one pairs",
+      "short_title": "Exact weighted identity",
+      "summary": "For integer $Q\\ge2$ and real $L\\ge Q^2/2$, evaluates the weighted second moment as the diagonal term $LN_Q$ plus the contribution of determinant-one Farey pairs. The correction vanishes for $L\\ge Q(Q-1)$.",
+      "section": "6",
+      "branch": "long_range",
+      "origin": "Proved in v17",
+      "tex_label": "lem:exact",
+      "source": {
+        "statement_lines": [
+          1209,
+          1215
+        ],
+        "proof_lines": [
+          1217,
+          1233
+        ],
+        "statement_page": 25
+      },
+      "references": [],
+      "notes": [
+        "The determinant-one classification is proved directly; no theorem on ordinary Farey correlations is invoked.",
+        "The proof does not use Proposition 6.1 or the large sieve."
+      ]
+    },
+    {
+      "id": "lem:positive",
+      "kind": "lemma",
+      "number": "6.4",
+      "title": "Positivity of the Farey correction integral",
+      "short_title": "Positivity of I(tau)",
+      "summary": "For $1/2\\le\\tau<1$, reduces $I(\\tau)$ to a one-dimensional integral and proves it is positive. On $[1/2,5/8]$ it gives the explicit lower bound $1/9000$.",
+      "section": "6",
+      "branch": "long_range",
+      "origin": "Proved in v17",
+      "tex_label": "lem:positive",
+      "source": {
+        "statement_lines": [
+          1237,
+          1247
+        ],
+        "proof_lines": [
+          1249,
+          1267
+        ],
+        "statement_page": 26
+      },
+      "references": [],
+      "notes": [
+        "Equation (1.19) supplies a definition only; there is no proof edge from Theorem 1.7 to this lemma."
+      ]
+    },
+    {
+      "id": "step:low-kernel-integrals",
+      "kind": "auxiliary",
+      "title": "Low-spectrum Bessel kernel bounds",
+      "short_title": "Low-spectrum\nkernel integrals",
+      "summary": "Bounds the Schlaefli remainder integral and both low-spectrum kernels by $1+\\log^+(1/x)$, then integrates over the fixed scaled support.",
+      "source": {
+        "lines": [
+          462,
+          484
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:E-bound",
+          "number": "2.3"
+        },
+        {
+          "label": "eq:kernel-low",
+          "number": "2.4"
+        }
+      ],
+      "references": [
+        {
+          "bibkey": "DLMF",
+          "locator": "Equation (10.9.6)",
+          "role": "Schlaefli J integral"
+        },
+        {
+          "bibkey": "DLMF",
+          "locator": "Equation (10.32.9)",
+          "role": "K integral"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "eq:symmetries",
+      "kind": "auxiliary",
+      "title": "Kloosterman symmetries",
+      "short_title": "Kloosterman symmetries (2.5)",
+      "summary": "Records reality, interchange of the two arguments, and simultaneous sign reversal of Kloosterman sums. In particular, $S(-n,1;c)=S(n,-1;c)$.",
+      "source": {
+        "lines": [
+          495,
+          498
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:symmetries",
+      "equations": [
+        {
+          "label": "eq:symmetries",
+          "number": "2.5"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:divisor-small-power",
+      "kind": "auxiliary",
+      "title": "Small-power divisor bound",
+      "short_title": "Divisor bound",
+      "summary": "Uses $\\tau(n)\\ll_\\eta n^\\eta$ for every $\\eta>0$.",
+      "source": {
+        "lines": [
+          508,
+          508
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [
+        {
+          "bibkey": "IK",
+          "locator": "Equation (1.81)",
+          "role": "divisor bound"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "eq:selberg-sum",
+      "kind": "auxiliary",
+      "title": "Cumulative Selberg identity",
+      "short_title": "Cumulative Selberg\nidentity (2.6)",
+      "summary": "Sums Selberg's identity over the modulus to reduce $A_Y(m,n)$ to divisor-weighted sums $A_{Y/d}(mn/d^2,1)$ for $mn\\ne0$. Terms with $d>Y$ vanish.",
+      "source": {
+        "lines": [
+          517,
+          521
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:selberg-sum",
+      "equations": [
+        {
+          "label": "eq:selberg-sum",
+          "number": "2.6"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "eq:axes",
+      "kind": "auxiliary",
+      "title": "Ramanujan sums on the coordinate axes",
+      "short_title": "Coordinate-axis bound (2.7)",
+      "summary": "The Ramanujan-sum formula gives $\\lvert A_Y(0,n)\\rvert\\le Y\\tau(\\lvert n\\rvert)$ for $n\\ne0$. Interchange of arguments covers the other axis.",
+      "source": {
+        "lines": [
+          523,
+          527
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:axes",
+      "equations": [
+        {
+          "label": "eq:axes",
+          "number": "2.7"
+        }
+      ],
+      "references": [
+        {
+          "bibkey": "HW",
+          "locator": "Theorem 271",
+          "role": "Ramanujan-sum formula"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "eq:farey-gap",
+      "kind": "auxiliary",
+      "title": "Lengths of adjacent Farey gaps",
+      "short_title": "Farey gap lengths (2.8)",
+      "summary": "The length of an adjacent Farey gap is $1/(qq')$ and lies between $Q^{-2}$ and $Q^{-1}$.",
+      "source": {
+        "lines": [
+          540,
+          544
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:farey-gap",
+      "equations": [
+        {
+          "label": "eq:farey-gap",
+          "number": "2.8"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:farey-nesting",
+      "kind": "auxiliary",
+      "title": "Nesting of Farey intervals",
+      "short_title": "Farey nesting",
+      "summary": "Increasing the Farey order adds fractions, so every new gap is contained in an old gap.",
+      "source": {
+        "lines": [
+          544,
+          544
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "Uses the definition of the Farey sequence, not Lemma 2.7."
+      ]
+    },
+    {
+      "id": "eq:farey-separation",
+      "kind": "auxiliary",
+      "title": "Circular separation of reduced fractions",
+      "short_title": "Circular separation (2.9)",
+      "summary": "Distinct reduced fractions modulo one, with denominators at most $Q\\ge2$, are separated by at least $1/[Q(Q-1)]$. The proof uses denominator arithmetic directly.",
+      "source": {
+        "lines": [
+          544,
+          548
+        ]
+      },
+      "branch": "shared",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:farey-separation",
+      "equations": [
+        {
+          "label": "eq:farey-separation",
+          "number": "2.9"
+        }
+      ],
+      "references": [],
+      "notes": [
+        "Proof is by denominator arithmetic, split into c!=d and c=d. It does not use adjacency and does not depend on Lemma 2.7."
+      ]
+    },
+    {
+      "id": "step:large-sieve-endpoint-sums",
+      "kind": "auxiliary",
+      "title": "Endpoint sums in the large-sieve remainder",
+      "short_title": "Large-sieve endpoint sums",
+      "summary": "Writes the off-diagonal interval sum as a difference of two cosecant bilinear forms and bounds each by the Montgomery-Vaughan inequality.",
+      "source": {
+        "lines": [
+          561,
+          571
+        ]
+      },
+      "branch": "long_range",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [
+        {
+          "bibkey": "MV",
+          "locator": "Lemma 2, equation (2.1)",
+          "role": "cosecant bilinear bound"
+        },
+        {
+          "bibkey": "MV",
+          "locator": "Proof of Theorem 1",
+          "role": "endpoint-sum derivation"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "step:ks-repetition-and-arcs",
+      "kind": "auxiliary",
+      "title": "Perturbation and arc approximation",
+      "short_title": "Repetitions and arcs",
+      "summary": "Perturbs repeated points to distinct points and passes to limits. Monotone approximation then covers the stated arc conventions and degeneracies.",
+      "source": {
+        "lines": [
+          581,
+          587
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 2.1",
+          "role": "base distinct-point inequality"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "step:twisted-spectral-decomposition",
+      "kind": "auxiliary",
+      "title": "Spectral decomposition of the twisted sums",
+      "short_title": "Twisted spectral decomposition",
+      "summary": "Applies Kuznetsov with a scalar of modulus one, separates low, holomorphic, and higher imaginary spectral ranges, and sums the window estimates by Minkowski.",
+      "source": {
+        "lines": [
+          604,
+          680
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:twist-spectral",
+          "number": "3.1"
+        },
+        {
+          "label": "eq:twist-minkowski",
+          "number": "3.2"
+        },
+        {
+          "label": "eq:twist-window",
+          "number": "3.3"
+        },
+        {
+          "label": "eq:twist-low",
+          "number": "3.4"
+        },
+        {
+          "label": "eq:twist-hol",
+          "number": "3.5"
+        },
+        {
+          "label": "eq:twist-piece",
+          "number": "3.6"
+        },
+        {
+          "label": "eq:twist-maass",
+          "number": "3.7"
+        }
+      ],
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Section 4.4",
+          "role": "method attribution"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "eq:elementary",
+      "kind": "auxiliary",
+      "title": "Elementary moving-interval estimate",
+      "short_title": "Elementary annulus bound",
+      "summary": "Counts the moduli in a moving interval and the logarithmic height measure contributed by each modulus; the Weil and divisor bounds give the elementary mean-square estimate.",
+      "source": {
+        "lines": [
+          699,
+          707
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:elementary",
+      "equations": [
+        {
+          "label": "eq:elementary",
+          "number": "3.9"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "eq:mellin",
+      "kind": "auxiliary",
+      "title": "Mellin transform of the smoothed interval",
+      "short_title": "Mellin decay of the cutoff",
+      "summary": "Constructs a smooth approximation to the moving interval and bounds its Mellin transform in terms of the interval length and the smoothing width.",
+      "source": {
+        "lines": [
+          709,
+          725
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:mellin",
+      "equations": [
+        {
+          "label": "eq:mellin",
+          "number": "3.10"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "eq:plancherel",
+      "kind": "auxiliary",
+      "title": "Plancherel identity for the height average",
+      "short_title": "Height Plancherel identity",
+      "summary": "The substitution $Y=C\\exp(u)$ converts the height mean of the smooth sums to a Fourier Plancherel integral in the twist parameter.",
+      "source": {
+        "lines": [
+          727,
+          742
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:plancherel",
+      "equations": [
+        {
+          "label": "eq:plancherel",
+          "number": "3.11"
+        }
+      ],
+      "references": [
+        {
+          "bibkey": "Grafakos",
+          "locator": "Theorem 2.2.14 (4)",
+          "role": "Plancherel identity"
+        }
+      ],
+      "notes": [
+        "This identity needs the definitions of the weights and B_sigma, not Lemma 3.1's estimate. Equation (1.24) in the introduction is the same identity announced earlier."
+      ]
+    },
+    {
+      "id": "eq:smooth-bound",
+      "kind": "auxiliary",
+      "title": "Smooth moving-interval height mean",
+      "short_title": "Smooth height mean",
+      "summary": "Combines the twisted second moment, Mellin decay, and Plancherel to bound the smoothed height mean.",
+      "source": {
+        "lines": [
+          744,
+          759
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:smooth-bound",
+      "equations": [
+        {
+          "label": "eq:smooth-bound",
+          "number": "3.12"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:remove-annular-weights",
+      "kind": "auxiliary",
+      "title": "Removal of smoothing and comparison of bounds",
+      "short_title": "Remove smoothing;\ncombine the two bounds",
+      "summary": "The smoothing changes at most two boundary moduli on the relevant height block. Bounds this error by Weil, then combines the spectral and elementary estimates to obtain the minimum in Lemma 3.2.",
+      "source": {
+        "lines": [
+          761,
+          778
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:cumulative-dyadic-height",
+      "kind": "auxiliary",
+      "title": "Dyadic decomposition of the cumulative sum",
+      "short_title": "Dyadic cumulative sum",
+      "summary": "Decomposes the cumulative modulus sum into dyadic annuli and uses Minkowski. At most two contributing blocks lie below base height one; these are treated directly.",
+      "source": {
+        "lines": [
+          788,
+          806
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:dyadic-minkowski",
+          "number": "3.13"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:exceptional-real-cutoffs",
+      "kind": "auxiliary",
+      "title": "Exceptional set uniform over real cutoffs",
+      "short_title": "Uniform exceptional set",
+      "summary": "Applies Chebyshev on finitely many dyadic frequency blocks and covers each real interval $[N,2N)$ by two adjacent blocks. Their lengths sum to at most $3N$.",
+      "source": {
+        "lines": [
+          808,
+          823
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:vector-Abel-summation",
+      "kind": "auxiliary",
+      "title": "Vector partial summation for the weight 1/c",
+      "short_title": "Vector partial summation",
+      "summary": "Applies partial summation coordinatewise and Minkowski to a finite vector of frequencies. An unweighted height mean then supplies the corresponding mean with weight $1/c$.",
+      "source": {
+        "lines": [
+          834,
+          852
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:weighted-partial",
+          "number": "3.14"
+        },
+        {
+          "label": "eq:weighted-norm",
+          "number": "3.15"
+        }
+      ],
+      "references": [],
+      "notes": [
+        "As a method node this is independent of a specific input estimate. Corollary 3.3 supplies Theorem 1.1 as that input; Remark 3.5 supplies Proposition 3.4 instead. Do not make the method node depend on Corollary 3.3's conclusion."
+      ]
+    },
+    {
+      "id": "step:two-frequency-reduction",
+      "kind": "auxiliary",
+      "title": "Divisor reduction and treatment of the axes",
+      "short_title": "Two-frequency reduction",
+      "summary": "Uses cumulative Selberg, Cauchy-Schwarz, and divisor counting to apply Theorem 1.1. Treats base heights below one directly and handles the coordinate axes separately.",
+      "source": {
+        "lines": [
+          865,
+          888
+        ]
+      },
+      "branch": "height",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:two-divisor",
+          "number": "3.17"
+        },
+        {
+          "label": "eq:two-inner",
+          "number": "3.18"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "geom:difference-fourier",
+      "kind": "auxiliary",
+      "title": "Fourier coefficients of ordered differences",
+      "short_title": "Fourier coefficients\nof differences",
+      "summary": "The normalized Fourier coefficient of the multiset of ordered differences is the squared absolute value of the coefficient of the original point set.",
+      "source": {
+        "lines": [
+          914,
+          918
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "geom:diagonal-removal",
+      "kind": "auxiliary",
+      "title": "Removal of diagonal pairs",
+      "short_title": "Remove diagonal pairs",
+      "summary": "Splits the difference measure into distinct pairs and a mass $1/N_Y$ at zero. The resulting discrepancy change is at most $1/N_Y$.",
+      "source": {
+        "lines": [
+          921,
+          925
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "eq:pair-block",
+      "kind": "auxiliary",
+      "title": "Dyadic frequency blocks for discrepancy",
+      "short_title": "Discrepancy blocks (4.3)",
+      "summary": "Uses Proposition 3.4 and the cardinality comparison to bound each weighted dyadic frequency block. The blocks on the axes are retained; the origin is excluded.",
+      "source": {
+        "lines": [
+          929,
+          936
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:pair-block",
+      "equations": [
+        {
+          "label": "eq:pair-block",
+          "number": "4.3"
+        }
+      ],
+      "references": [],
+      "notes": [
+        "The j=0 blocks include the coordinate axes; remove k=(0,0) before using Proposition 3.4."
+      ]
+    },
+    {
+      "id": "geom:pair-upper",
+      "kind": "auxiliary",
+      "title": "Upper discrepancy bound",
+      "short_title": "Upper discrepancy bound",
+      "summary": "Sums the frequency blocks, applies Lemma 4.1, and chooses the Fourier cutoff of order $X^2$ to prove the upper discrepancy bound.",
+      "source": {
+        "lines": [
+          927,
+          940
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "geom:first-coordinate-injectivity",
+      "kind": "auxiliary",
+      "title": "Injectivity of the first coordinate",
+      "short_title": "Reduced-fraction\nprojection",
+      "summary": "The first coordinate determines the reduced denominator and then its unique modular inverse. Thus distinct points have distinct first coordinates, including the modulus-one origin.",
+      "source": {
+        "lines": [
+          942,
+          942
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "Uniqueness of reduced denominator and of the modular inverse; includes the modulus-one origin."
+      ]
+    },
+    {
+      "id": "geom:pair-lower",
+      "kind": "auxiliary",
+      "title": "Lower discrepancy bound from an empty strip",
+      "short_title": "Empty-strip lower bound",
+      "summary": "Circular separation gives a strip containing no differences, including no diagonal difference. Letting its left endpoint approach zero gives the lower discrepancy bound.",
+      "source": {
+        "lines": [
+          942,
+          943
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "No spectral input and no upper discrepancy estimate."
+      ]
+    },
+    {
+      "id": "geom:covering-upper",
+      "kind": "auxiliary",
+      "title": "Upper covering bound from Farey products",
+      "short_title": "Covering upper bound",
+      "summary": "Takes $Q=\\lfloor\\sqrt{X/2}\\rfloor$ and uses a point in every product of Farey gaps to obtain the upper covering bound, including rational endpoints by closure.",
+      "source": {
+        "lines": [
+          977,
+          979
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "Choose closed Farey intervals at rational endpoints; the constructed lift lies inside their open product."
+      ]
+    },
+    {
+      "id": "eq:gap-monotone",
+      "kind": "auxiliary",
+      "title": "Adaptive Farey intervals",
+      "short_title": "Gap bounds and nesting (5.1)",
+      "summary": "Combines the Farey gap bounds with nesting and defines the least order at which the gap containing an irrational coordinate is short enough.",
+      "source": {
+        "lines": [
+          983,
+          987
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:gap-monotone",
+      "equations": [
+        {
+          "label": "eq:gap-monotone",
+          "number": "5.1"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "eq:layer-cake",
+      "kind": "auxiliary",
+      "title": "Layer-cake identity for positive moments",
+      "short_title": "Layer-cake identity (5.6)",
+      "summary": "Expresses a positive distance moment as the integral of its tail by Tonelli's theorem.",
+      "source": {
+        "lines": [
+          1049,
+          1052
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:layer-cake",
+      "equations": [
+        {
+          "label": "eq:layer-cake",
+          "number": "5.6"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "geom:positive-moment-upper",
+      "kind": "auxiliary",
+      "title": "Upper bounds for positive distance moments",
+      "short_title": "Positive moment upper bounds",
+      "summary": "Integrates the distance-tail estimate in the three ranges of $s$, using the already proved upper covering bound for the support cutoff.",
+      "source": {
+        "lines": [
+          1048,
+          1068
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "The first logarithm is used for s<=2 and the second for s>2. The support cutoff comes from the already proved upper covering bound."
+      ]
+    },
+    {
+      "id": "eq:counting-lower",
+      "kind": "auxiliary",
+      "title": "Counting lower bound for positive moments",
+      "short_title": "Disc-counting lower bound (5.8)",
+      "summary": "The union of small discs around the $N_X$ points covers at most half the torus. This gives a lower moment bound of order $X^{-s}$ for every fixed $s>0$.",
+      "source": {
+        "lines": [
+          1099,
+          1103
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:counting-lower",
+      "equations": [
+        {
+          "label": "eq:counting-lower",
+          "number": "5.8"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "eq:square-integral",
+      "kind": "auxiliary",
+      "title": "Moment of the distance to a square boundary",
+      "short_title": "Empty-square integral (5.9)",
+      "summary": "On an empty square, the distance to the point set is at least the distance to the boundary. Integrates this boundary distance explicitly.",
+      "source": {
+        "lines": [
+          1105,
+          1108
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:square-integral",
+      "equations": [
+        {
+          "label": "eq:square-integral",
+          "number": "5.9"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "geom:supercritical-lower",
+      "kind": "auxiliary",
+      "title": "Supercritical lower bound from one empty square",
+      "short_title": "Supercritical lower bound",
+      "summary": "One empty square of side $1/(2\\sqrt X)$ gives the lower moment bound of order $X^{-1-s/2}$ for $s>2$.",
+      "source": {
+        "lines": [
+          1110,
+          1110
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "eq:distance-lower",
+      "kind": "auxiliary",
+      "title": "Disjoint empty-square packing",
+      "short_title": "Critical square packing (5.10)",
+      "summary": "Packs disjoint empty squares near rational pairs with small denominators. Their contributions produce the square of a harmonic totient sum.",
+      "source": {
+        "lines": [
+          1112,
+          1119
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": "eq:distance-lower",
+      "equations": [
+        {
+          "label": "eq:distance-lower",
+          "number": "5.10"
+        }
+      ],
+      "references": [],
+      "notes": [
+        "This is the source of the two independent harmonic denominator sums."
+      ]
+    },
+    {
+      "id": "geom:totient-harmonic",
+      "kind": "auxiliary",
+      "title": "Harmonic sum of totients",
+      "short_title": "Harmonic totient sum",
+      "summary": "Derives $\\sum_{q\\le y}\\varphi(q)/q^2=(6/\\pi^2)\\log y+O(1)$ by the elementary Mobius formula and a harmonic-sum estimate.",
+      "source": {
+        "lines": [
+          1120,
+          1123
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "Derived in the manuscript; do not turn it into an uncited dependence on a specialized external theorem."
+      ]
+    },
+    {
+      "id": "geom:critical-lower",
+      "kind": "auxiliary",
+      "title": "Critical second-moment lower bound",
+      "short_title": "Critical moment lower bound",
+      "summary": "Combines the disjoint-square packing with the totient sum to obtain the critical $X^{-2}(\\log X)^2$ lower bound. The counting bound covers the remaining bounded range of heights.",
+      "source": {
+        "lines": [
+          1112,
+          1125
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "geom:empty-tangent-disc",
+      "kind": "auxiliary",
+      "title": "Empty tangent disc and lower covering bound",
+      "short_title": "Tangent-disc covering\nlower bound",
+      "summary": "Proves directly that a disc tangent at the origin contains no lift of the point set. This gives the lower covering bound independently of the empty-rectangle lemma.",
+      "source": {
+        "lines": [
+          1127,
+          1141
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "This is independent of Lemma 5.5; do not connect the empty-rectangle criterion as a required predecessor."
+      ]
+    },
+    {
+      "id": "geom:negative-upper",
+      "kind": "auxiliary",
+      "title": "Upper bound for negative moments",
+      "short_title": "Negative moment upper bound",
+      "summary": "Disc counting and the layer-cake identity for negative powers establish finiteness and the upper bound for $-2<s<0$.",
+      "source": {
+        "lines": [
+          1148,
+          1155
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "Proves finiteness before using Jensen; negative powers at the finitely many points of P_X are harmless measure-zero singularities."
+      ]
+    },
+    {
+      "id": "geom:negative-lower",
+      "kind": "auxiliary",
+      "title": "Lower bound for negative moments",
+      "short_title": "Negative moment lower bound",
+      "summary": "Jensen's inequality and only the upper first-moment estimate in Theorem 1.6 give the lower bound for negative moments.",
+      "source": {
+        "lines": [
+          1155,
+          1158
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "The upper first-moment bound gives the lower negative-moment bound because s<0. Finiteness was already proved in geom:negative-upper, but extended Jensen also gives the lower inequality without using that estimate. Do not reverse the roles."
+      ]
+    },
+    {
+      "id": "geom:negative-divergence",
+      "kind": "auxiliary",
+      "title": "Divergence of negative moments",
+      "short_title": "Divergence at s <= -2",
+      "summary": "The origin belongs to the point set, so a local polar integral proves divergence for $s\\le-2$.",
+      "source": {
+        "lines": [
+          1159,
+          1159
+        ]
+      },
+      "branch": "distance",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "No positive-moment or Farey estimate is needed."
+      ]
+    },
+    {
+      "id": "support:cardinality-comparison",
+      "kind": "auxiliary",
+      "title": "Size of the modular-inverse point set",
+      "short_title": "Cardinality comparison",
+      "summary": "The summatory totient estimate gives $N_X=(3/\\pi^2)X^2+O(X\\log(2X))$, hence $N_Y\\asymp X^2$ for $X\\le Y\\le2X$. The discrepancy proof needs the lower bound for normalization.",
+      "source": {
+        "lines": [
+          143,
+          148
+        ]
+      },
+      "branch": "discrepancy",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [
+        {
+          "bibkey": "HW",
+          "locator": "Theorem 330"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "support:cardinality-upper",
+      "kind": "auxiliary",
+      "title": "Elementary upper bound for the cardinality",
+      "short_title": "Elementary cardinality bound",
+      "summary": "The identity $N_X=\\sum_{c\\le X}\\varphi(c)$ and $\\varphi(c)\\le c$ give $N_X\\le X^2$ for $X\\ge1$. This is sufficient for the distance counting arguments and the interval remainder bound.",
+      "source": {
+        "lines": [
+          143,
+          148
+        ]
+      },
+      "branch": "shared",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:long-trig-polynomial",
+      "kind": "auxiliary",
+      "title": "Trigonometric-polynomial representation",
+      "short_title": "Farey polynomial (6.1)",
+      "summary": "Opens the Kloosterman sums to express $A_Q(n,1)$ using the $N_Q$ distinct reduced fractions as frequencies and inverse phases of modulus one as coefficients.",
+      "source": {
+        "lines": [
+          1164,
+          1168
+        ]
+      },
+      "branch": "long_range",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:trig-polynomial",
+          "number": "6.1"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:determinant-one-pairs",
+      "kind": "auxiliary",
+      "title": "Determinant-one pair calculation",
+      "short_title": "Determinant-one pairs",
+      "summary": "Compact support restricts the centered determinant residue to $+1$ or $-1$. The Chinese remainder theorem counts the pairs; their conjugate inverse phases give the cosine correction.",
+      "source": {
+        "lines": [
+          1218,
+          1232
+        ]
+      },
+      "branch": "long_range",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:pairs",
+          "number": "6.3"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "step:coprime-lattice-sum",
+      "kind": "auxiliary",
+      "title": "Uniform coprime lattice sum",
+      "short_title": "Coprime lattice sum",
+      "summary": "A uniform Lipschitz bound permits a Riemann-sum comparison on each sublattice. Mobius inversion produces the coprime main term and the $O(Q\\log(2Q))$ error before multiplication by $2L$.",
+      "source": {
+        "lines": [
+          1270,
+          1284
+        ]
+      },
+      "branch": "long_range",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [],
+      "references": [],
+      "notes": [
+        "The lattice estimate itself is proved locally. Lemma 6.3 connects this coprime sum with the weighted moment, at the level of Theorem 1.7."
+      ]
+    },
+    {
+      "id": "step:abel-variation-localization",
+      "kind": "auxiliary",
+      "title": "Abel summation and variation localization",
+      "short_title": "Abel summation and\nvariation localization",
+      "summary": "Combines the uniform sharp-interval remainder bound with the positive weighted correction. Abel summation and small variation near zero and in the far tail force a large remainder at radius comparable to $Q^2$.",
+      "source": {
+        "lines": [
+          1289,
+          1313
+        ]
+      },
+      "branch": "long_range",
+      "origin": "In-text supporting step",
+      "tex_label": null,
+      "equations": [
+        {
+          "label": "eq:remainder-bound",
+          "number": "6.5"
+        },
+        {
+          "label": "eq:weighted-remainder",
+          "number": "6.6"
+        },
+        {
+          "label": "eq:abel",
+          "number": "6.7"
+        }
+      ],
+      "references": [],
+      "notes": []
+    },
+    {
+      "id": "external:brs-spectral",
+      "kind": "external",
+      "title": "Kuznetsov formula and local spectral large sieve",
+      "short_title": "BRS, Lemma 4.3",
+      "summary": "Kuznetsov formula and local spectral large sieve; BRS, Lemma 4.3.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 4.3"
+        }
+      ]
+    },
+    {
+      "id": "external:brs-transforms",
+      "kind": "external",
+      "title": "Twisted Bessel transform estimates",
+      "short_title": "BRS, Lemma 4.2",
+      "summary": "Twisted Bessel transform estimates; BRS, Lemma 4.2.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 4.2"
+        }
+      ]
+    },
+    {
+      "id": "external:brs-discrepancy",
+      "kind": "external",
+      "title": "Koksma-Szusz base inequality",
+      "short_title": "BRS, Lemma 2.1",
+      "summary": "Koksma-Szusz base inequality; BRS, Lemma 2.1.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "BRS",
+          "locator": "Lemma 2.1"
+        }
+      ]
+    },
+    {
+      "id": "external:dlmf",
+      "kind": "external",
+      "title": "Integral representations of J and K Bessel functions",
+      "short_title": "DLMF, 10.9.6 and 10.32.9",
+      "summary": "Integral representations of J and K Bessel functions; DLMF, Equations (10.9.6) and (10.32.9).",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "DLMF",
+          "locator": "Equations (10.9.6) and (10.32.9)"
+        }
+      ]
+    },
+    {
+      "id": "external:weil",
+      "kind": "external",
+      "title": "Weil bound",
+      "short_title": "Iwaniec-Kowalski\nCorollary 11.12",
+      "summary": "Weil bound; IK, Corollary 11.12.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "IK",
+          "locator": "Corollary 11.12"
+        }
+      ]
+    },
+    {
+      "id": "external:divisor",
+      "kind": "external",
+      "title": "Divisor small-power bound",
+      "short_title": "Iwaniec-Kowalski (1.81)",
+      "summary": "Divisor small-power bound; IK, Equation (1.81).",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "IK",
+          "locator": "Equation (1.81)"
+        }
+      ]
+    },
+    {
+      "id": "external:selberg",
+      "kind": "external",
+      "title": "Selberg identity for integer arguments",
+      "short_title": "Xi (1.1)",
+      "summary": "Selberg identity for integer arguments; Xi, Equation (1.1).",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "Xi",
+          "locator": "Equation (1.1)"
+        }
+      ]
+    },
+    {
+      "id": "external:farey",
+      "kind": "external",
+      "title": "Adjacent Farey fractions",
+      "short_title": "Hardy-Wright\nTheorems 28 and 30",
+      "summary": "Adjacent Farey fractions; HW, Theorems 28 and 30.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "HW",
+          "locator": "Theorems 28 and 30"
+        }
+      ]
+    },
+    {
+      "id": "external:ramanujan",
+      "kind": "external",
+      "title": "Ramanujan-sum identity",
+      "short_title": "Hardy-Wright, Theorem 271",
+      "summary": "Ramanujan-sum identity; HW, Theorem 271.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "HW",
+          "locator": "Theorem 271"
+        }
+      ]
+    },
+    {
+      "id": "external:totient",
+      "kind": "external",
+      "title": "Summatory totient asymptotic",
+      "short_title": "Hardy-Wright, Theorem 330",
+      "summary": "Summatory totient asymptotic; HW, Theorem 330.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "HW",
+          "locator": "Theorem 330"
+        }
+      ]
+    },
+    {
+      "id": "external:large-sieve",
+      "kind": "external",
+      "title": "Cosecant bilinear inequality and endpoint argument",
+      "short_title": "Montgomery-Vaughan\nLemma 2 (2.1)",
+      "summary": "Cosecant bilinear inequality and endpoint argument; MV, Lemma 2, equation (2.1); proof of Theorem 1.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "MV",
+          "locator": "Lemma 2, equation (2.1); proof of Theorem 1"
+        }
+      ]
+    },
+    {
+      "id": "external:plancherel",
+      "kind": "external",
+      "title": "Plancherel theorem",
+      "short_title": "Grafakos, Theorem 2.2.14 (4)",
+      "summary": "Plancherel theorem; Grafakos, Theorem 2.2.14 (4).",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "Grafakos",
+          "locator": "Theorem 2.2.14 (4)"
+        }
+      ]
+    },
+    {
+      "id": "external:poisson",
+      "kind": "external",
+      "title": "Poisson summation",
+      "short_title": "Grafakos, Theorem 3.2.8",
+      "summary": "Poisson summation; Grafakos, Theorem 3.2.8.",
+      "branch": "literature",
+      "origin": "Cited literature input",
+      "references": [
+        {
+          "bibkey": "Grafakos",
+          "locator": "Theorem 3.2.8"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "lem:selberg",
+      "to": "eq:selberg-sum",
+      "relation": "proof",
+      "reason": "identity",
+      "source_lines": [
+        517,
+        521
+      ]
+    },
+    {
+      "from": "eq:symmetries",
+      "to": "eq:axes",
+      "relation": "proof",
+      "reason": "argument interchange for the second axis",
+      "source_lines": [
+        523,
+        527
+      ]
+    },
+    {
+      "from": "lem:farey",
+      "to": "eq:farey-gap",
+      "relation": "proof",
+      "reason": "determinant and denominator-sum identities",
+      "source_lines": [
+        540,
+        544
+      ]
+    },
+    {
+      "from": "lem:kuznetsov",
+      "to": "step:twisted-spectral-decomposition",
+      "relation": "proof",
+      "reason": "formula",
+      "source_lines": [
+        604,
+        680
+      ]
+    },
+    {
+      "from": "lem:window",
+      "to": "step:twisted-spectral-decomposition",
+      "relation": "proof",
+      "reason": "window bound",
+      "source_lines": [
+        604,
+        680
+      ]
+    },
+    {
+      "from": "lem:transforms",
+      "to": "step:twisted-spectral-decomposition",
+      "relation": "proof",
+      "reason": "high and holomorphic bounds",
+      "source_lines": [
+        604,
+        680
+      ]
+    },
+    {
+      "from": "lem:low",
+      "to": "step:twisted-spectral-decomposition",
+      "relation": "proof",
+      "reason": "low bound",
+      "source_lines": [
+        604,
+        680
+      ]
+    },
+    {
+      "from": "lem:weil",
+      "to": "eq:elementary",
+      "relation": "proof",
+      "reason": "Kloosterman bound",
+      "source_lines": [
+        699,
+        707
+      ]
+    },
+    {
+      "from": "step:divisor-small-power",
+      "to": "eq:elementary",
+      "relation": "proof",
+      "reason": "divisor bound",
+      "source_lines": [
+        699,
+        707
+      ]
+    },
+    {
+      "from": "lem:twist",
+      "to": "eq:smooth-bound",
+      "relation": "proof",
+      "reason": "estimate",
+      "source_lines": [
+        744,
+        759
+      ]
+    },
+    {
+      "from": "eq:mellin",
+      "to": "eq:smooth-bound",
+      "relation": "proof",
+      "reason": "weight decay",
+      "source_lines": [
+        744,
+        759
+      ]
+    },
+    {
+      "from": "eq:plancherel",
+      "to": "eq:smooth-bound",
+      "relation": "proof",
+      "reason": "identity",
+      "source_lines": [
+        744,
+        759
+      ]
+    },
+    {
+      "from": "lem:weil",
+      "to": "step:remove-annular-weights",
+      "relation": "proof",
+      "reason": "boundary error",
+      "source_lines": [
+        761,
+        778
+      ]
+    },
+    {
+      "from": "step:divisor-small-power",
+      "to": "step:remove-annular-weights",
+      "relation": "proof",
+      "reason": "boundary divisor loss",
+      "source_lines": [
+        761,
+        778
+      ]
+    },
+    {
+      "from": "eq:smooth-bound",
+      "to": "step:remove-annular-weights",
+      "relation": "proof",
+      "reason": "smooth mean square",
+      "source_lines": [
+        761,
+        778
+      ]
+    },
+    {
+      "from": "eq:elementary",
+      "to": "step:remove-annular-weights",
+      "relation": "proof",
+      "reason": "competing elementary estimate",
+      "source_lines": [
+        761,
+        778
+      ]
+    },
+    {
+      "from": "lem:annulus",
+      "to": "step:cumulative-dyadic-height",
+      "relation": "proof",
+      "reason": "estimate at delta=1",
+      "source_lines": [
+        788,
+        806
+      ]
+    },
+    {
+      "from": "eq:symmetries",
+      "to": "step:cumulative-dyadic-height",
+      "relation": "proof",
+      "reason": "signed-frequency identification",
+      "source_lines": [
+        788,
+        806
+      ]
+    },
+    {
+      "from": "thm:height",
+      "to": "step:exceptional-real-cutoffs",
+      "relation": "proof",
+      "reason": "mean-square bound",
+      "source_lines": [
+        808,
+        823
+      ]
+    },
+    {
+      "from": "eq:selberg-sum",
+      "to": "step:two-frequency-reduction",
+      "relation": "proof",
+      "reason": "identity",
+      "source_lines": [
+        865,
+        888
+      ]
+    },
+    {
+      "from": "thm:height",
+      "to": "step:two-frequency-reduction",
+      "relation": "proof",
+      "reason": "mean-square bound",
+      "source_lines": [
+        865,
+        888
+      ]
+    },
+    {
+      "from": "eq:axes",
+      "to": "step:two-frequency-reduction",
+      "relation": "proof",
+      "reason": "axis bound",
+      "source_lines": [
+        865,
+        888
+      ]
+    },
+    {
+      "from": "step:divisor-small-power",
+      "to": "step:two-frequency-reduction",
+      "relation": "proof",
+      "reason": "divisor loss",
+      "source_lines": [
+        865,
+        888
+      ]
+    },
+    {
+      "from": "prop:two",
+      "to": "eq:pair-block",
+      "relation": "proof",
+      "reason": "Each shifted dyadic frequency block contributes at most X^-2(2^(j1+j2)X)^eta to the weighted height average of |a_Y(k)|^2.",
+      "source_lines": [
+        929,
+        936
+      ]
+    },
+    {
+      "from": "support:cardinality-comparison",
+      "to": "eq:pair-block",
+      "relation": "proof",
+      "reason": "Each shifted dyadic frequency block contributes at most X^-2(2^(j1+j2)X)^eta to the weighted height average of |a_Y(k)|^2.",
+      "source_lines": [
+        929,
+        936
+      ]
+    },
+    {
+      "from": "lem:pair-pointwise",
+      "to": "geom:pair-upper",
+      "relation": "proof",
+      "reason": "Sum O(log^2 K) blocks, use Lemma 4.1, choose K=ceil(X^2), and eta=min(eps/6,1/2) to obtain (1.13).",
+      "source_lines": [
+        927,
+        940
+      ]
+    },
+    {
+      "from": "eq:pair-block",
+      "to": "geom:pair-upper",
+      "relation": "proof",
+      "reason": "Sum O(log^2 K) blocks, use Lemma 4.1, choose K=ceil(X^2), and eta=min(eps/6,1/2) to obtain (1.13).",
+      "source_lines": [
+        927,
+        940
+      ]
+    },
+    {
+      "from": "support:cardinality-comparison",
+      "to": "geom:pair-upper",
+      "relation": "proof",
+      "reason": "Sum O(log^2 K) blocks, use Lemma 4.1, choose K=ceil(X^2), and eta=min(eps/6,1/2) to obtain (1.13).",
+      "source_lines": [
+        927,
+        940
+      ]
+    },
+    {
+      "from": "eq:farey-separation",
+      "to": "geom:pair-lower",
+      "relation": "proof",
+      "reason": "The strip [theta,Q^-2) x full-circle has no differences, including the diagonal, for 0<theta<Q^-2 and Q=floor(Y); let theta decrease to zero.",
+      "source_lines": [
+        942,
+        943
+      ]
+    },
+    {
+      "from": "geom:first-coordinate-injectivity",
+      "to": "geom:pair-lower",
+      "relation": "proof",
+      "reason": "The strip [theta,Q^-2) x full-circle has no differences, including the diagonal, for 0<theta<Q^-2 and Q=floor(Y); let theta decrease to zero.",
+      "source_lines": [
+        942,
+        943
+      ]
+    },
+    {
+      "from": "lem:farey-product",
+      "to": "geom:covering-upper",
+      "relation": "proof",
+      "reason": "For Q=floor(sqrt(X/2)), sup d_X<=sqrt(2)/Q<=4 X^-1/2.",
+      "source_lines": [
+        977,
+        979
+      ]
+    },
+    {
+      "from": "eq:farey-gap",
+      "to": "geom:covering-upper",
+      "relation": "proof",
+      "reason": "For Q=floor(sqrt(X/2)), sup d_X<=sqrt(2)/Q<=4 X^-1/2.",
+      "source_lines": [
+        977,
+        979
+      ]
+    },
+    {
+      "from": "eq:farey-gap",
+      "to": "eq:gap-monotone",
+      "relation": "proof",
+      "reason": "For irrational x, Q^-2<=|I_Q(x)|<=Q^-1 and I_{Q+1}(x) subset I_Q(x). Defines the adaptive minimal order R_rho.",
+      "source_lines": [
+        983,
+        987
+      ]
+    },
+    {
+      "from": "step:farey-nesting",
+      "to": "eq:gap-monotone",
+      "relation": "proof",
+      "reason": "For irrational x, Q^-2<=|I_Q(x)|<=Q^-1 and I_{Q+1}(x) subset I_Q(x). Defines the adaptive minimal order R_rho.",
+      "source_lines": [
+        983,
+        987
+      ]
+    },
+    {
+      "from": "lem:distance-tail",
+      "to": "geom:positive-moment-upper",
+      "relation": "proof",
+      "reason": "Integrate the distance-tail bound separately for 0<s<2, s=2, s>2; the two logarithms give the three stated orders.",
+      "source_lines": [
+        1048,
+        1068
+      ]
+    },
+    {
+      "from": "geom:covering-upper",
+      "to": "geom:positive-moment-upper",
+      "relation": "proof",
+      "reason": "Integrate the distance-tail bound separately for 0<s<2, s=2, s>2; the two logarithms give the three stated orders.",
+      "source_lines": [
+        1048,
+        1068
+      ]
+    },
+    {
+      "from": "eq:layer-cake",
+      "to": "geom:positive-moment-upper",
+      "relation": "proof",
+      "reason": "Integrate the distance-tail bound separately for 0<s<2, s=2, s>2; the two logarithms give the three stated orders.",
+      "source_lines": [
+        1048,
+        1068
+      ]
+    },
+    {
+      "from": "support:cardinality-upper",
+      "to": "eq:counting-lower",
+      "relation": "proof",
+      "reason": "For all s>0, integral d_X^s >= (1/2)(2 pi N_X)^(-s/2) >>_s X^-s.",
+      "source_lines": [
+        1099,
+        1103
+      ]
+    },
+    {
+      "from": "lem:empty",
+      "to": "geom:supercritical-lower",
+      "relation": "proof",
+      "reason": "Use the empty square (0,h)x(-h,0), h=1/(2 sqrt(X)), to get integral d_X^s >>_s X^(-1-s/2) for s>2.",
+      "source_lines": [
+        1110,
+        1110
+      ]
+    },
+    {
+      "from": "eq:square-integral",
+      "to": "geom:supercritical-lower",
+      "relation": "proof",
+      "reason": "Use the empty square (0,h)x(-h,0), h=1/(2 sqrt(X)), to get integral d_X^s >>_s X^(-1-s/2) for s>2.",
+      "source_lines": [
+        1110,
+        1110
+      ]
+    },
+    {
+      "from": "lem:empty",
+      "to": "eq:distance-lower",
+      "relation": "proof",
+      "reason": "Pack two disjoint empty squares at each rational pair with q1,q2<=X^(1/4)/4 and side 1/(2 sqrt(q1 q2 X)); obtain (c_2/(8X^2))(sum_{q<=X^(1/4)/4} phi(q)/q^2)^2.",
+      "source_lines": [
+        1112,
+        1119
+      ]
+    },
+    {
+      "from": "eq:farey-separation",
+      "to": "eq:distance-lower",
+      "relation": "proof",
+      "reason": "Pack two disjoint empty squares at each rational pair with q1,q2<=X^(1/4)/4 and side 1/(2 sqrt(q1 q2 X)); obtain (c_2/(8X^2))(sum_{q<=X^(1/4)/4} phi(q)/q^2)^2.",
+      "source_lines": [
+        1112,
+        1119
+      ]
+    },
+    {
+      "from": "eq:square-integral",
+      "to": "eq:distance-lower",
+      "relation": "proof",
+      "reason": "Pack two disjoint empty squares at each rational pair with q1,q2<=X^(1/4)/4 and side 1/(2 sqrt(q1 q2 X)); obtain (c_2/(8X^2))(sum_{q<=X^(1/4)/4} phi(q)/q^2)^2.",
+      "source_lines": [
+        1112,
+        1119
+      ]
+    },
+    {
+      "from": "eq:distance-lower",
+      "to": "geom:critical-lower",
+      "relation": "proof",
+      "reason": "Combine the square packing and totient harmonic asymptotic to obtain integral d_X^2 >> X^-2(log X)^2 for large X; use counting for the remaining bounded range.",
+      "source_lines": [
+        1112,
+        1125
+      ]
+    },
+    {
+      "from": "geom:totient-harmonic",
+      "to": "geom:critical-lower",
+      "relation": "proof",
+      "reason": "Combine the square packing and totient harmonic asymptotic to obtain integral d_X^2 >> X^-2(log X)^2 for large X; use counting for the remaining bounded range.",
+      "source_lines": [
+        1112,
+        1125
+      ]
+    },
+    {
+      "from": "eq:counting-lower",
+      "to": "geom:critical-lower",
+      "relation": "proof",
+      "reason": "Combine the square packing and totient harmonic asymptotic to obtain integral d_X^2 >> X^-2(log X)^2 for large X; use counting for the remaining bounded range.",
+      "source_lines": [
+        1112,
+        1125
+      ]
+    },
+    {
+      "from": "support:cardinality-upper",
+      "to": "geom:negative-upper",
+      "relation": "proof",
+      "reason": "For -2<s<0, union-bound meas{d_X<t}<=min(1,pi N_X t^2), then inverse layer-cake gives integral d_X^s <= 2/(s+2)(pi N_X)^(-s/2) <<_s X^-s.",
+      "source_lines": [
+        1148,
+        1155
+      ]
+    },
+    {
+      "from": "thm:distance",
+      "to": "geom:negative-lower",
+      "relation": "proof",
+      "reason": "Only the upper first-moment estimate (s=1) is used, through Jensen.",
+      "source_lines": [
+        1155,
+        1158
+      ]
+    },
+    {
+      "from": "step:low-kernel-integrals",
+      "to": "lem:low",
+      "relation": "proof",
+      "reason": "Low-spectrum Bessel kernel bounds supplies this part of the statement."
+    },
+    {
+      "from": "step:large-sieve-endpoint-sums",
+      "to": "lem:sieve",
+      "relation": "proof",
+      "reason": "Endpoint sums in the large-sieve remainder supplies this part of the statement."
+    },
+    {
+      "from": "step:ks-repetition-and-arcs",
+      "to": "lem:ks",
+      "relation": "proof",
+      "reason": "Perturbation and arc approximation supplies this part of the statement."
+    },
+    {
+      "from": "step:twisted-spectral-decomposition",
+      "to": "lem:twist",
+      "relation": "proof",
+      "reason": "Spectral decomposition of the twisted sums supplies this part of the statement."
+    },
+    {
+      "from": "step:remove-annular-weights",
+      "to": "lem:annulus",
+      "relation": "proof",
+      "reason": "Removal of smoothing and comparison of bounds supplies this part of the statement."
+    },
+    {
+      "from": "step:cumulative-dyadic-height",
+      "to": "thm:height",
+      "relation": "proof",
+      "reason": "Dyadic decomposition of the cumulative sum supplies this part of the statement."
+    },
+    {
+      "from": "step:exceptional-real-cutoffs",
+      "to": "cor:most",
+      "relation": "proof",
+      "reason": "Exceptional set uniform over real cutoffs supplies this part of the statement."
+    },
+    {
+      "from": "step:two-frequency-reduction",
+      "to": "prop:two",
+      "relation": "proof",
+      "reason": "Divisor reduction and treatment of the axes supplies this part of the statement."
+    },
+    {
+      "from": "geom:pair-upper",
+      "to": "thm:pair-height",
+      "relation": "proof",
+      "reason": "Upper discrepancy bound supplies this part of the statement."
+    },
+    {
+      "from": "geom:pair-lower",
+      "to": "thm:pair-height",
+      "relation": "proof",
+      "reason": "Lower discrepancy bound from an empty strip supplies this part of the statement."
+    },
+    {
+      "from": "geom:covering-upper",
+      "to": "thm:distance",
+      "relation": "proof",
+      "reason": "Upper covering bound from Farey products supplies this part of the statement."
+    },
+    {
+      "from": "geom:positive-moment-upper",
+      "to": "thm:distance",
+      "relation": "proof",
+      "reason": "Upper bounds for positive distance moments supplies this part of the statement."
+    },
+    {
+      "from": "eq:counting-lower",
+      "to": "thm:distance",
+      "relation": "proof",
+      "reason": "Counting lower bound for positive moments supplies this part of the statement."
+    },
+    {
+      "from": "geom:supercritical-lower",
+      "to": "thm:distance",
+      "relation": "proof",
+      "reason": "Supercritical lower bound from one empty square supplies this part of the statement."
+    },
+    {
+      "from": "geom:critical-lower",
+      "to": "thm:distance",
+      "relation": "proof",
+      "reason": "Critical second-moment lower bound supplies this part of the statement."
+    },
+    {
+      "from": "geom:empty-tangent-disc",
+      "to": "thm:distance",
+      "relation": "proof",
+      "reason": "Empty tangent disc and lower covering bound supplies this part of the statement."
+    },
+    {
+      "from": "geom:negative-upper",
+      "to": "rem:negative",
+      "relation": "proof",
+      "reason": "Upper bound for negative moments supplies this part of the statement."
+    },
+    {
+      "from": "geom:negative-lower",
+      "to": "rem:negative",
+      "relation": "proof",
+      "reason": "Lower bound for negative moments supplies this part of the statement."
+    },
+    {
+      "from": "geom:negative-divergence",
+      "to": "rem:negative",
+      "relation": "proof",
+      "reason": "Divergence of negative moments supplies this part of the statement."
+    },
+    {
+      "from": "lem:kuznetsov",
+      "to": "lem:window",
+      "relation": "proof",
+      "reason": "Apply the positive-measure spectral large sieve twice, using Hilbert-space duality."
+    },
+    {
+      "from": "lem:annulus",
+      "to": "thm:short",
+      "relation": "proof",
+      "reason": "Set C=X and rewrite the two signs as signed frequencies."
+    },
+    {
+      "from": "eq:symmetries",
+      "to": "thm:short",
+      "relation": "proof",
+      "reason": "Identify negative frequencies with the opposite-sign sums."
+    },
+    {
+      "from": "thm:height",
+      "to": "cor:weighted",
+      "relation": "proof",
+      "reason": "The cumulative height estimate is the input to partial summation."
+    },
+    {
+      "from": "step:vector-Abel-summation",
+      "to": "cor:weighted",
+      "relation": "proof",
+      "reason": "Apply the vector partial-summation calculation to the one-frequency vector."
+    },
+    {
+      "from": "prop:two",
+      "to": "rem:weighted-two",
+      "relation": "proof",
+      "reason": "Use the two-frequency estimate as input to the weighted calculation."
+    },
+    {
+      "from": "step:vector-Abel-summation",
+      "to": "rem:weighted-two",
+      "relation": "proof",
+      "reason": "Apply the same partial-summation calculation to the rectangular frequency vector."
+    },
+    {
+      "from": "lem:ks",
+      "to": "lem:pair-pointwise",
+      "relation": "proof",
+      "reason": "Apply the inequality to the multiset of ordered differences, including repetitions."
+    },
+    {
+      "from": "geom:difference-fourier",
+      "to": "lem:pair-pointwise",
+      "relation": "proof",
+      "reason": "The Fourier coefficients of the difference measure are squared absolute values."
+    },
+    {
+      "from": "geom:diagonal-removal",
+      "to": "lem:pair-pointwise",
+      "relation": "proof",
+      "reason": "Removing diagonal pairs changes probabilities by at most 1/N_Y."
+    },
+    {
+      "from": "thm:pair-height",
+      "to": "cor:pair-height-most",
+      "relation": "proof",
+      "reason": "Apply Chebyshev to the sum of the two nonnegative discrepancies."
+    },
+    {
+      "from": "lem:farey",
+      "to": "lem:farey-product",
+      "relation": "proof",
+      "reason": "Multiply the determinant-one matrices attached to the two Farey gaps."
+    },
+    {
+      "from": "lem:farey",
+      "to": "lem:adaptive",
+      "relation": "proof",
+      "reason": "Use the adjacent denominator relation to count long gaps."
+    },
+    {
+      "from": "eq:gap-monotone",
+      "to": "lem:adaptive",
+      "relation": "proof",
+      "reason": "The gap bounds and nesting control the least admissible order."
+    },
+    {
+      "from": "lem:adaptive",
+      "to": "lem:product-tail",
+      "relation": "proof",
+      "reason": "Apply the one-dimensional tail bounds to dyadic product levels."
+    },
+    {
+      "from": "lem:farey-product",
+      "to": "lem:distance-tail",
+      "relation": "proof",
+      "reason": "A point in a product of short gaps bounds the distance."
+    },
+    {
+      "from": "lem:product-tail",
+      "to": "lem:distance-tail",
+      "relation": "proof",
+      "reason": "Estimate the measure where the product of adaptive orders is too large."
+    },
+    {
+      "from": "cor:weighted",
+      "to": "rem:weighted-two",
+      "relation": "method",
+      "reason": "Reuse the proof of Corollary 3.3, replacing its numerical input by Proposition 3.4.",
+      "source_lines": [
+        891,
+        891
+      ]
+    },
+    {
+      "from": "lem:poisson",
+      "to": "step:determinant-one-pairs",
+      "relation": "proof",
+      "reason": "identity",
+      "source_lines": [
+        1218,
+        1232
+      ]
+    },
+    {
+      "from": "step:long-trig-polynomial",
+      "to": "step:determinant-one-pairs",
+      "relation": "proof",
+      "reason": "identity",
+      "source_lines": [
+        1218,
+        1232
+      ]
+    },
+    {
+      "from": "prop:long",
+      "to": "step:abel-variation-localization",
+      "relation": "proof",
+      "reason": "uniform remainder estimate",
+      "source_lines": [
+        1289,
+        1313
+      ]
+    },
+    {
+      "from": "thm:correction",
+      "to": "step:abel-variation-localization",
+      "relation": "proof",
+      "reason": "positive weighted asymptotic at tau=3/4",
+      "source_lines": [
+        1289,
+        1313
+      ]
+    },
+    {
+      "from": "lem:poisson",
+      "to": "step:abel-variation-localization",
+      "relation": "proof",
+      "reason": "total-weight identity at theta=0",
+      "source_lines": [
+        1289,
+        1313
+      ]
+    },
+    {
+      "from": "lem:exact",
+      "to": "thm:correction",
+      "relation": "proof",
+      "reason": "Specialize the exact formula to L=tau Q^2."
+    },
+    {
+      "from": "lem:positive",
+      "to": "thm:correction",
+      "relation": "proof",
+      "reason": "The integral is positive throughout the stated tau range."
+    },
+    {
+      "from": "step:coprime-lattice-sum",
+      "to": "thm:correction",
+      "relation": "proof",
+      "reason": "Evaluate the coprime correction sum uniformly in tau."
+    },
+    {
+      "from": "step:abel-variation-localization",
+      "to": "cor:obstruction",
+      "relation": "proof",
+      "reason": "Localization supplies a sharp interval at radius comparable to Q^2."
+    },
+    {
+      "from": "lem:sieve",
+      "to": "prop:long",
+      "relation": "proof",
+      "reason": "Apply the abstract large sieve with squared coefficient norm N_Q."
+    },
+    {
+      "from": "eq:farey-separation",
+      "to": "prop:long",
+      "relation": "proof",
+      "reason": "Use the circular separation 1/(Q(Q-1))."
+    },
+    {
+      "from": "step:long-trig-polynomial",
+      "to": "prop:long",
+      "relation": "proof",
+      "reason": "The reduced fractions are distinct frequencies and all coefficients have modulus one."
+    },
+    {
+      "from": "step:determinant-one-pairs",
+      "to": "lem:exact",
+      "relation": "proof",
+      "reason": "The pair calculation evaluates every off-diagonal term; no pair remains when L>=Q(Q-1)."
+    },
+    {
+      "from": "support:cardinality-upper",
+      "to": "step:abel-variation-localization",
+      "relation": "proof",
+      "reason": "The elementary count bounds Q(Q-1)N_Q by Q^4."
+    },
+    {
+      "from": "external:brs-spectral",
+      "to": "lem:kuznetsov",
+      "relation": "literature",
+      "reason": "BRS, Lemma 4.3: Kuznetsov formula and local spectral large sieve."
+    },
+    {
+      "from": "external:brs-transforms",
+      "to": "lem:transforms",
+      "relation": "literature",
+      "reason": "BRS, Lemma 4.2: Twisted Bessel transform estimates."
+    },
+    {
+      "from": "external:brs-discrepancy",
+      "to": "step:ks-repetition-and-arcs",
+      "relation": "literature",
+      "reason": "BRS, Lemma 2.1: Koksma-Szusz base inequality."
+    },
+    {
+      "from": "external:dlmf",
+      "to": "step:low-kernel-integrals",
+      "relation": "literature",
+      "reason": "DLMF, Equations (10.9.6) and (10.32.9): Integral representations of J and K Bessel functions."
+    },
+    {
+      "from": "external:weil",
+      "to": "lem:weil",
+      "relation": "literature",
+      "reason": "IK, Corollary 11.12: Weil bound."
+    },
+    {
+      "from": "external:divisor",
+      "to": "step:divisor-small-power",
+      "relation": "literature",
+      "reason": "IK, Equation (1.81): Divisor small-power bound."
+    },
+    {
+      "from": "external:selberg",
+      "to": "lem:selberg",
+      "relation": "literature",
+      "reason": "Xi, Equation (1.1): Selberg identity for integer arguments."
+    },
+    {
+      "from": "external:farey",
+      "to": "lem:farey",
+      "relation": "literature",
+      "reason": "HW, Theorems 28 and 30: Adjacent Farey fractions."
+    },
+    {
+      "from": "external:ramanujan",
+      "to": "eq:axes",
+      "relation": "literature",
+      "reason": "HW, Theorem 271: Ramanujan-sum identity."
+    },
+    {
+      "from": "external:totient",
+      "to": "support:cardinality-comparison",
+      "relation": "literature",
+      "reason": "HW, Theorem 330: Summatory totient asymptotic."
+    },
+    {
+      "from": "external:large-sieve",
+      "to": "step:large-sieve-endpoint-sums",
+      "relation": "literature",
+      "reason": "MV, Lemma 2, equation (2.1); proof of Theorem 1: Cosecant bilinear inequality and endpoint argument."
+    },
+    {
+      "from": "external:plancherel",
+      "to": "eq:plancherel",
+      "relation": "literature",
+      "reason": "Grafakos, Theorem 2.2.14 (4): Plancherel theorem."
+    },
+    {
+      "from": "external:poisson",
+      "to": "lem:poisson",
+      "relation": "literature",
+      "reason": "Grafakos, Theorem 3.2.8: Poisson summation."
+    }
+  ],
+  "bibliography": [
+    {
+      "bibkey": "BRS",
+      "authors": "Valentin Blomer, Morten S. Risager, Igor E. Shparlinski",
+      "title": "Triple sums of Kloosterman sums and the discrepancy of modular inverses",
+      "as_cited": "J. Lond. Math. Soc. (2) 112 (2025), no. 3, e70291, 30 pp.",
+      "used_locators": [
+        "Section 4",
+        "Lemma 4.3",
+        "Lemma 4.4",
+        "Corollary 4.5",
+        "Lemma 4.2",
+        "Section 4.4",
+        "Lemma 2.1"
+      ]
+    },
+    {
+      "bibkey": "DLMF",
+      "title": "NIST Digital Library of Mathematical Functions",
+      "as_cited": "Release 1.2.8 of 2026-09-15",
+      "used_locators": [
+        "Equation (10.9.6)",
+        "Equation (10.32.9)"
+      ]
+    },
+    {
+      "bibkey": "IK",
+      "authors": "Henryk Iwaniec and Emmanuel Kowalski",
+      "title": "Analytic number theory",
+      "as_cited": "AMS Colloquium Publications 53 (2004)",
+      "used_locators": [
+        "Corollary 11.12",
+        "Equation (1.81)"
+      ]
+    },
+    {
+      "bibkey": "HW",
+      "authors": "G. H. Hardy and E. M. Wright",
+      "title": "An introduction to the theory of numbers",
+      "as_cited": "6th ed., Oxford University Press, 2008",
+      "used_locators": [
+        "Theorem 271",
+        "Theorems 28 and 30",
+        "Theorem 330"
+      ]
+    },
+    {
+      "bibkey": "MV",
+      "authors": "H. L. Montgomery and R. C. Vaughan",
+      "title": "The large sieve",
+      "as_cited": "Mathematika 20 (1973), 119-134",
+      "used_locators": [
+        "Proof of Theorem 1",
+        "Lemma 2, equation (2.1)"
+      ]
+    },
+    {
+      "bibkey": "Grafakos",
+      "authors": "Loukas Grafakos",
+      "title": "Classical Fourier analysis",
+      "as_cited": "3rd ed., Graduate Texts in Mathematics 249, Springer, 2014",
+      "used_locators": [
+        "Theorem 2.2.14 (4)",
+        "Theorem 3.2.8"
+      ]
+    },
+    {
+      "bibkey": "Xi",
+      "authors": "Ping Xi",
+      "title": "An elementary proof of the Selberg identity for Kloosterman sums",
+      "as_cited": "Preprint (2023), arXiv:2306.16929",
+      "used_locators": [
+        "Equation (1.1)"
+      ]
+    }
+  ],
+  "discussion": [
+    {
+      "section": "7.1",
+      "title": "Individual heights",
+      "source_lines": [
+        1320,
+        1322
+      ],
+      "summary": "Open pointwise bounds remain distinct from the proved height averages and exceptional-set corollaries."
+    },
+    {
+      "section": "7.2",
+      "title": "Small-power factors",
+      "source_lines": [
+        1324,
+        1326
+      ],
+      "summary": "Discusses replacing epsilon losses by logarithmic factors; no stronger bound is asserted."
+    },
+    {
+      "section": "7.3",
+      "title": "Distance constants",
+      "source_lines": [
+        1328,
+        1338
+      ],
+      "summary": "The sharper covering constants follow from the Farey-product upper calculation and the independent tangent-disc lower calculation. Existence of limiting normalized moments or a limiting covering constant remains open."
+    },
+    {
+      "section": "7.4",
+      "title": "Long ranges and a fixed second argument",
+      "source_lines": [
+        1340,
+        1344
+      ],
+      "summary": "Discusses unevaluated higher determinants and the open question of an unweighted asymptotic at scale $Q^2$. The final paragraph adapts the Section 6 proofs to fixed nonzero integer $h$, choosing $\\tau=1-1/(4\\sqrt{\\lvert h\\rvert})$; its constants depend on $h$. This is an unnumbered extension, not an extra theorem."
+    }
+  ],
+  "overview": {
+    "nodes": [
+      {
+        "id": "ov:spectral",
+        "kind": "overview",
+        "title": "Spectral inputs",
+        "short_title": "Lemmas 2.1-2.4",
+        "members": [
+          "lem:kuznetsov",
+          "lem:window",
+          "lem:transforms",
+          "lem:low"
+        ]
+      },
+      {
+        "id": "ov:height-core",
+        "kind": "overview",
+        "title": "Twisted and moving-interval means",
+        "short_title": "Lemmas 3.1-3.2; Weil bound",
+        "members": [
+          "lem:twist",
+          "lem:annulus",
+          "lem:weil"
+        ]
+      },
+      {
+        "id": "ov:height-results",
+        "kind": "overview",
+        "title": "Height-averaged moments",
+        "short_title": "Theorems 1.1-1.2; Corollaries 1.3, 3.3",
+        "members": [
+          "thm:height",
+          "thm:short",
+          "cor:most",
+          "cor:weighted"
+        ]
+      },
+      {
+        "id": "ov:two-frequency",
+        "kind": "overview",
+        "title": "Two-frequency and discrepancy tools",
+        "short_title": "Lemma 2.6; Proposition 3.4; Remark 3.5\nKoksma-Szusz; Lemma 4.1",
+        "members": [
+          "lem:selberg",
+          "prop:two",
+          "rem:weighted-two",
+          "lem:ks",
+          "lem:pair-pointwise"
+        ]
+      },
+      {
+        "id": "ov:discrepancy",
+        "kind": "overview",
+        "title": "Pair-difference discrepancy",
+        "short_title": "Theorem 1.4; Corollary 1.5",
+        "members": [
+          "thm:pair-height",
+          "cor:pair-height-most"
+        ]
+      },
+      {
+        "id": "ov:geometry",
+        "kind": "overview",
+        "title": "Elementary Farey geometry",
+        "short_title": "Lemma 2.7; Lemmas 5.1-5.5\nCounting and empty tangent disc",
+        "members": [
+          "lem:farey",
+          "lem:farey-product",
+          "lem:adaptive",
+          "lem:product-tail",
+          "lem:distance-tail",
+          "lem:empty"
+        ]
+      },
+      {
+        "id": "ov:distance",
+        "kind": "overview",
+        "title": "Distance moments and covering",
+        "short_title": "Theorem 1.6; Remark 5.6",
+        "members": [
+          "thm:distance",
+          "rem:negative"
+        ]
+      },
+      {
+        "id": "ov:separation",
+        "kind": "overview",
+        "title": "Circular Farey separation",
+        "short_title": "Equation (2.9)",
+        "members": [
+          "eq:farey-separation"
+        ]
+      },
+      {
+        "id": "ov:large-sieve",
+        "kind": "overview",
+        "title": "Classical large sieve",
+        "short_title": "Lemma 2.8; Proposition 6.1",
+        "members": [
+          "lem:sieve",
+          "prop:long"
+        ]
+      },
+      {
+        "id": "ov:farey-correction",
+        "kind": "overview",
+        "title": "Exact weighted Farey calculation",
+        "short_title": "Lemmas 6.2-6.4; Theorem 1.7",
+        "members": [
+          "lem:poisson",
+          "lem:exact",
+          "lem:positive",
+          "thm:correction"
+        ]
+      },
+      {
+        "id": "ov:obstruction",
+        "kind": "overview",
+        "title": "Sharp interval obstruction",
+        "short_title": "Corollary 1.8",
+        "members": [
+          "cor:obstruction"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "ov:spectral",
+        "to": "ov:height-core",
+        "reason": "Spectral inputs prove the twisted mean; it enters the moving-interval bound."
+      },
+      {
+        "from": "ov:height-core",
+        "to": "ov:height-results",
+        "reason": "The moving-interval bound gives both main height theorems."
+      },
+      {
+        "from": "ov:height-results",
+        "to": "ov:two-frequency",
+        "reason": "Theorem 1.1 enters the Selberg reduction; the weighted method is reused."
+      },
+      {
+        "from": "ov:two-frequency",
+        "to": "ov:discrepancy",
+        "reason": "Proposition 3.4 and Lemma 4.1 give the upper discrepancy bound."
+      },
+      {
+        "from": "ov:geometry",
+        "to": "ov:distance",
+        "reason": "Farey products, tails, empty squares and the tangent disc prove the distance results."
+      },
+      {
+        "from": "ov:separation",
+        "to": "ov:geometry",
+        "reason": "Circular separation ensures that the critical empty-square packing is disjoint."
+      },
+      {
+        "from": "ov:separation",
+        "to": "ov:discrepancy",
+        "reason": "The discrepancy lower bound uses an empty strip."
+      },
+      {
+        "from": "ov:separation",
+        "to": "ov:large-sieve",
+        "reason": "Separation of the specific frequencies gives Proposition 6.1."
+      },
+      {
+        "from": "ov:large-sieve",
+        "to": "ov:obstruction",
+        "reason": "A uniform interval remainder bound allows localization."
+      },
+      {
+        "from": "ov:farey-correction",
+        "to": "ov:obstruction",
+        "reason": "A positive weighted correction forces a large sharp-interval remainder."
+      }
+    ],
+    "rank_groups": [
+      {
+        "rank": "same",
+        "nodes": [
+          "ov:spectral",
+          "ov:separation",
+          "ov:farey-correction"
+        ]
+      },
+      {
+        "rank": "sink",
+        "nodes": [
+          "ov:discrepancy",
+          "ov:distance",
+          "ov:obstruction"
+        ]
+      }
+    ]
+  }
+}
